@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -48,10 +49,21 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'usertype' => 'required',
+            'phone_number' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+            'password' => 'required|string|min:6|max:20|confirmed',
+            'password_confirmation' => 'required|same:password',
+        ],
+         [
+              'usertype.required'         =>      'Please tell us who you are',
+              'phone_number.required'     =>      'The phone number is required',
+              'email.required'            =>      'Email address is required',
+              'email.email'               =>      'Email is invalid',
+              'password.required'         =>      'Password is required',
+              'password.min'              =>      'Password needs to have at least 6 characters',
+              'password.max'              =>      'Password maximum length is 20 characters'
+          ]);
     }
 
     /**
@@ -60,12 +72,25 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
+
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user =  User::create([
+            'usertype' => $data['usertype'],
+            'phone_number' => $data['phone_number'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'token'    =>  str_random(64),
         ]);
+
+        $user_type = strtolower($data['usertype']);
+        $role = Role::whereName($user_type)->first();
+        $user->assignRole($role);
+        return $user;
+    }
+
+    protected function redirectTo(){
+        //Check users' type and redirect accordingly
+        return '/check-users-details';
     }
 }

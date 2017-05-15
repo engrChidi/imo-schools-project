@@ -1,0 +1,21 @@
+.all_form_wrapper {
+  margin-top: 50px;
+  padding: 0 30px;
+  button {
+    //background: #00bcd4;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.all_form_inner_wrapper {
+  margin: 0 auto;
+  width: 500px;
+  padding: 0 30px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  .panel{
+    padding: 0 30px;
+  }
+}
