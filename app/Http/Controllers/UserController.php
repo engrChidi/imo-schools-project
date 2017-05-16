@@ -46,4 +46,9 @@ class UserController extends Controller
     {
         return view('users.school');
     }
+
+    Public function moreInfo()
+    {
+        return view('users.more-info');
+    }
 }

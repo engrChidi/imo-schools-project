@@ -83,6 +83,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'token'    =>  str_random(64),
+            'reg_completed' =>  TRUE
         ]);
 
         $user_type = strtolower($data['usertype']);

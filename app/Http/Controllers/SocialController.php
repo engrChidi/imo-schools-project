@@ -109,7 +109,7 @@ class SocialController extends Controller
         //ensure to check if the user already exist in order to move to the main dashboard
         if( auth()->user()->hasRole('user')){
             if(auth()->user()->reg_completed == TRUE ){
-                return redirect('home');
+                return redirect()->route('check-user-details');
             }else {
                 return redirect()->route('more-info');
             }

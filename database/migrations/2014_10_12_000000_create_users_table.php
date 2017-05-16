@@ -25,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->boolean('activated')->default(false);
-            $table->string('token');
+            $table->boolean('reg_completed')->default(false);
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }

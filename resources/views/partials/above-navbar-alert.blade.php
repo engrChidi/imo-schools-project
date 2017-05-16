@@ -7,5 +7,10 @@
         We have sent you an activation link. Kindly check your inbox and activate your account<br>
         {{--Please activate your email. --}}
         Didn't get the mail<a href="{{route('authenticated.activation-resend')}}">Resend</a> activation email.')
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
     </div>
 @endif

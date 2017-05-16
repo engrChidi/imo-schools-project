@@ -80,11 +80,18 @@
     {
         $a = 'authenticated.';
         Route::get('/logout', ['as' => $a . 'logout', 'uses' => 'Auth\LoginController@logout']);
-        Route::get('/activate/{token}', ['as' => $a . 'activate', 'uses' => 'ActivateController@activate']);
-        Route::get('/activate', ['as' => $a . 'activation-resend', 'uses' => 'ActivateController@resend']);
+        Route::get('/activate/{token}', ['as' => $a . 'activate', 'uses' => 'ActivationController@activate']);
+        Route::get('/activate', ['as' => $a . 'activation-resend', 'uses' => 'ActivationController@resend']);
     });
 
     Route::get('not-activated', ['as' => 'not-activated', 'uses' => function () {
         return view('errors.not-activated');
     }]);
+
+    /* Route for more info for users */
+
+    Route::get('/more-info',[
+       'uses'       =>      'UserController@moreInfo',
+        'as'        =>      'more-info'
+    ]);
 

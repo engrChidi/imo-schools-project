@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activation;
 use App\Traits\SmsActivationTrait;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,7 @@ class ActivationController extends Controller
     {
         $this->initiateEmailActivation(auth()->user());
 
-        return redirect('home')
+        return redirect('check-users-details')
             ->with('status', 'success')
             ->with('message', 'Activation email sent.');
     }
