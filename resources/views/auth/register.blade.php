@@ -12,6 +12,29 @@ Register | {{ config('app.name', 'Laravel') }} | Platform for comparing schools 
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Register</div>
                     <div class="panel-body">
+                        <div class="text-center">
+                            <fieldset class="form-group">
+                                <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">
+                                    <button class="btn btn-success _facebook">
+                                        Register with Facebook
+                                    </button>
+                                </a>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <a href="{{ route('social.redirect', ['provider' => 'google']) }}">
+                                    <button class="btn btn-success _google">
+                                        Register with Google
+                                    </button>
+                                </a>
+                            </fieldset>
+                        </div>
+
+                        <hr>
+                        <div class="text-center">
+                            Or Register with Email
+                        </div>
+                        <hr>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
 

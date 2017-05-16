@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Role;
 use App\User;
+use App\Traits\SmsActivationTrait;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -22,6 +23,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use SmsActivationTrait;
 
     /**
      * Where to redirect users after registration.
@@ -86,6 +88,7 @@ class RegisterController extends Controller
         $user_type = strtolower($data['usertype']);
         $role = Role::whereName($user_type)->first();
         $user->assignRole($role);
+        $this->initiateEmailActivation($user);
         return $user;
     }
 

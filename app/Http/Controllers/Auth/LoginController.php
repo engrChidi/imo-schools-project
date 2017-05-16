@@ -36,4 +36,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    protected function redirectTo(){
+        //Check users' type and redirect accordingly
+        return '/check-users-details';
+    }
+
 }

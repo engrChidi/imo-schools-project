@@ -17,6 +17,7 @@
 
     Auth::routes();
 
+    // Don't forget to add activated middleware to this route
     Route::get('/home', 'HomeController@index')->name('home');
 
     /* Routes for other pages on the website */
@@ -61,4 +62,29 @@
         ]);
 
     });
+
+    /* Route for social providers */
+    $s = 'social.';
+    Route::get('/social/redirect/{provider}', [
+        'as' => $s . 'redirect',
+        'uses' => 'SocialController@getSocialRedirect'
+    ]);
+
+    Route::get('/social/handle/{provider}', [
+        'as' => $s . 'handle',
+        'uses' => 'SocialController@getSocialHandle'
+    ]);
+
+    /* Routes for Authentication */
+    Route::group(['middleware' => 'auth'], function()
+    {
+        $a = 'authenticated.';
+        Route::get('/logout', ['as' => $a . 'logout', 'uses' => 'Auth\LoginController@logout']);
+        Route::get('/activate/{token}', ['as' => $a . 'activate', 'uses' => 'ActivateController@activate']);
+        Route::get('/activate', ['as' => $a . 'activation-resend', 'uses' => 'ActivateController@resend']);
+    });
+
+    Route::get('not-activated', ['as' => 'not-activated', 'uses' => function () {
+        return view('errors.not-activated');
+    }]);
 

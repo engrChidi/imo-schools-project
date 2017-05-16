@@ -4,6 +4,7 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use App\Http\Middleware\CheckUserType;
+use App\Http\Middleware\CheckIsUserActivated;
 
 class Kernel extends HttpKernel
 {
@@ -57,6 +58,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'usertype' =>   CheckUserType::class
+        'usertype' =>   CheckUserType::class,
+        'activated' => CheckIsUserActivated::class
     ];
 }

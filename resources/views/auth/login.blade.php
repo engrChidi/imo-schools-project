@@ -12,6 +12,28 @@
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Login</div>
                     <div class="panel-body">
+                        <div class="text-center">
+                            <fieldset class="form-group">
+                                <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">
+                                    <button class="btn btn-success _facebook">
+                                        Login with Facebook
+                                    </button>
+                                </a>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <a href="{{ route('social.redirect', ['provider' => 'google']) }}">
+                                    <button class="btn btn-success _google">
+                                        Login with Google
+                                    </button>
+                                </a>
+                            </fieldset>
+                        </div>
+                        <hr>
+
+                        <div class="text-center">
+                            Or Login with Email
+                        </div>
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 

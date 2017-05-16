@@ -22,6 +22,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
+            @include('partials.above-navbar-alert')
             <div class="container">
                 <div class="navbar-header">
 
