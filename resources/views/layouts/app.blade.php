@@ -18,6 +18,7 @@
     @yield('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
     <div id="app">
@@ -55,11 +56,19 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    @if((Auth::user()->full_name()))
+                                     {{ Auth::user()->email }}
+                                    @else
+                                    {{ Auth::user()->full_name() }}
+                                    @endif
+                                    <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="{{ route('check-user-details') }}">
+                                           Dashboard
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -83,5 +92,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/home.js') }}"></script>
 </body>
 </html>

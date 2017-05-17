@@ -35,7 +35,7 @@ Register | {{ config('app.name', 'Laravel') }} | Platform for comparing schools 
                             Or Register with Email
                         </div>
                         <hr>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                        <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
 
                             <fieldset class="form-group{{ $errors->has('usertype') ? ' has-error' : '' }}">
@@ -97,7 +97,7 @@ Register | {{ config('app.name', 'Laravel') }} | Platform for comparing schools 
 
                             <fieldset class="form-group">
                                 <div class="">
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn btn-success auth_button">
                                         Register
                                     </button>
                                 </div>

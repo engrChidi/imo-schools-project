@@ -18,7 +18,7 @@
                             </div>
                         @endif
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                        <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('password.email') }}">
                             {{ csrf_field() }}
 
                             <div class="text-center form-group">
@@ -45,7 +45,7 @@
 
                             <fieldset class="form-group">
                                 <div class="">
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn btn-success auth_button">
                                         Send Password Reset Link
                                     </button>
                                 </div>

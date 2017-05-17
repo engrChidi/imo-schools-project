@@ -34,7 +34,7 @@
                         <div class="text-center">
                             Or Login with Email
                         </div>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                        <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 
                             <fieldset class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -71,7 +71,7 @@
                             {{--</div>--}}
                             <fieldset class="form-group">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn btn-success auth_button">
                                         Login
                                     </button>
                                 </div>

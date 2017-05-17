@@ -20,7 +20,7 @@
                             </div>
                         @endif
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
+                        <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('password.request') }}">
                             {{ csrf_field() }}
 
                             <input type="hidden" name="token" value="{{ $token }}">
@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 {{--<div class="col-md-6 col-md-offset-4">--}}
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn btn-success auth_button">
                                         Reset Password
                                     </button>
                                 {{--</div>--}}

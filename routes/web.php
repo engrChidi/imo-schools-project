@@ -39,7 +39,7 @@
         'as'        =>      'check-user-details'
     ]);
 
-    Route::group(['prefix' => 'user'], function()
+    Route::group(['prefix' => 'user', 'middleware' => 'auth'], function()
     {
         Route::get('/teacher', [
             'uses'      =>      'UserController@showTeacher',
@@ -93,5 +93,21 @@
     Route::get('/more-info',[
        'uses'       =>      'UserController@moreInfo',
         'as'        =>      'more-info'
+    ]);
+
+    /* Route to update details for all users irrespective of the user type */
+    Route::post('/update/schools-details/{id}', [
+       'uses'       =>      'UserController@updateDetailsSchool',
+        'as'        =>      'update-school-details'
+    ]);
+
+    Route::post('/update/teachers-details/{id}', [
+        'uses'       =>      'UserController@updateDetailsTeacher',
+        'as'        =>      'update-teachers-details'
+    ]);
+
+    Route::post('/update/business-details/{id}', [
+        'uses'       =>      'UserController@updateDetailsBusiness',
+        'as'        =>      'update-business-details'
     ]);
 

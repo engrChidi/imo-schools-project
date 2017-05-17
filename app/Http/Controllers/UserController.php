@@ -51,4 +51,30 @@ class UserController extends Controller
     {
         return view('users.more-info');
     }
+
+    /**
+     * Function to update the details of a user with role or usertype School
+     * @param $id
+     */
+    public function updateDetailsSchool(Request $request, $id)
+    {
+        $input = $request->all();
+        dd($input);
+//        $input  = request()->all();
+//        dd('Hey, you are welcome ' . ' ' . $id);
+    }
+
+    public function updateDetailsTeacher(Request $request, $id)
+    {
+        $input = $request->all();
+        dd($input);
+//        dd('Hey, you are a teacher with an id ' . ' ' . $id);
+    }
+
+    public function updateDetailsBusiness(Request $request, $id)
+    {
+        $input = $request->all();
+        dd($input);
+//        dd('Hey you are a Business Owner with an ID ' . ' ' . $id);
+    }
 }

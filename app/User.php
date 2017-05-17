@@ -28,6 +28,33 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Get the school associated with a particular user
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function school()
+    {
+        return $this->hasOne('App\School');
+    }
+
+    /**
+     * Get the teacher account associated with a partcular user
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function teacher()
+    {
+        return $this->hasOne('App\Teacher');
+    }
+
+    /**
+     * Get the business associated to a particular user
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function business()
+    {
+        return $this->hasOne('App\Business');
+    }
+
 
     public function roles()
     {
@@ -52,5 +79,10 @@ class User extends Authenticatable
     public function removeRole($role)
     {
         return $this->roles()->detach($role);
+    }
+
+    public function full_name()
+    {
+        return $this->first_name. ' ' . $this->last_name;
     }
 }
