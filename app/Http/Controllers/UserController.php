@@ -24,6 +24,11 @@ class UserController extends Controller
             return redirect()->route('business');
         }
 
+        //redirect if user has no role assigned yet
+        if( !auth()->user()->hasRole('')){
+            return redirect()->route('business');
+        }
+
         return route('home');
     }
 
