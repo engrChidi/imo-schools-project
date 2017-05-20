@@ -15,20 +15,8 @@ class CheckUserType
      */
     public function handle($request, Closure $next)
     {
-        if( auth()->user()->hasRole('teacher')){
-            return redirect()->route('teacher');
-        }
-
-        if( auth()->user()->hasRole('student')){
-            return redirect()->route('student');
-        }
-
-        if( auth()->user()->hasRole('school')){
-            return redirect()->route('school');
-        }
-
-        if( auth()->user()->hasRole('business')){
-            return redirect()->route('business');
+        if( is_null(auth()->user()->usertype)){
+            return redirect()->route('more-info');
         }
 
         return $next($request);

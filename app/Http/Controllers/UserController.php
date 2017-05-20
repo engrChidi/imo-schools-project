@@ -77,4 +77,10 @@ class UserController extends Controller
         dd($input);
 //        dd('Hey you are a Business Owner with an ID ' . ' ' . $id);
     }
+
+    public function usertypeUpdate(Request $request, $id)
+    {
+        $input = $request->all();
+        dd('Update user info and assign role accordingly');
+    }
 }

@@ -91,9 +91,9 @@ class SocialController extends Controller
                 $socialData->provider = $provider;
                 $newSocialUser->social()->save($socialData);
 
-                //Add role for user
-                $role = Role::whereName('user')->first();
-                $newSocialUser->assignRole($role);
+                //Add role for user (temporarily disabled)
+//                $role = Role::whereName('user')->first();
+//                $newSocialUser->assignRole($role);
                 $this->initiateEmailActivation($newSocialUser);
 
                 $socialUser = $newSocialUser;
@@ -106,18 +106,23 @@ class SocialController extends Controller
 
         auth()->login($socialUser, TRUE);
 
-        //ensure to check if the user already exist in order to move to the main dashboard
-        if( auth()->user()->hasRole('user')){
-            if(auth()->user()->reg_completed == TRUE ){
-                return redirect()->route('check-user-details');
-            }else {
-                return redirect()->route('more-info');
-            }
+        // Ensure that the usertype and phone number of the user is captured
+        if(is_null(auth()->user()->usertype)){
+            return redirect()->route('more-info');
         }
 
-        if( auth()->user()->hasRole('administrator')){
-            return redirect()->route('admin.home');
-        }
-        return abort(500, 'User has no Role assigned');
+        //ensure to check if the user already exist in order to move to the main dashboard
+//        if( auth()->user()->hasRole('user')){
+//            if(auth()->user()->reg_completed == TRUE ){
+//                return redirect()->route('check-user-details');
+//            }else {
+//                return redirect()->route('more-info');
+//            }
+//        }
+
+//        if( auth()->user()->hasRole('administrator')){
+//            return redirect()->route('admin.home');
+//        }
+//        return abort(500, 'User has no Role assigned');
     }
 }

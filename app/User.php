@@ -61,6 +61,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role')->withTimestamps();
     }
 
+    public function social()
+    {
+        return $this->hasMany('App\SocialLogin');
+    }
+
     public function hasRole($name)
     {
         foreach($this->roles as $role)

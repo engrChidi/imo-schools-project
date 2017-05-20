@@ -18,7 +18,9 @@
     Auth::routes();
 
     // Don't forget to add activated middleware to this route
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::group(['middleware' => 'usertype'], function(){
+        Route::get('/home', 'HomeController@index')->name('home');
+    });
 
     /* Routes for other pages on the website */
 
@@ -39,7 +41,7 @@
         'as'        =>      'check-user-details'
     ]);
 
-    Route::group(['prefix' => 'user', 'middleware' => 'auth'], function()
+    Route::group(['prefix' => 'user', 'middleware' => ['auth', 'usertype']], function()
     {
         Route::get('/teacher', [
             'uses'      =>      'UserController@showTeacher',
@@ -62,6 +64,11 @@
         ]);
 
     });
+
+    Route::post('user/update-info/{id}', [
+       'uses'       =>      'UserController@usertypeUpdate',
+        'as'        =>      'usertype-update'
+    ]);
 
     /* Route for social providers */
     $s = 'social.';
