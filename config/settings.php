@@ -10,5 +10,13 @@
         /*
          * Is email activation required
          */
-        'activation' => env('ACTIVATION', false)
+        'activation' => env('ACTIVATION', false),
+
+        /**
+         * Credentials for sending SMS to users
+         */
+
+        'username_sms' => env('SMS_USERNAME'),
+
+        'password_sms' => env('SMS_PASSWORD')
     ];

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\SmsActivationTrait;
 use Illuminate\Http\Request;
 use App\Role;
 use App\SocialLogin;
-use App\Traits\SmsActivationTrait;
+use App\Traits\ActivationTrait;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -14,6 +15,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialController extends Controller
 {
+    use ActivationTrait;
     use SmsActivationTrait;
     public function getSocialRedirect($provider)
     {

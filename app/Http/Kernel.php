@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'usertype' =>   CheckUserType::class,
-        'activated' => CheckIsUserActivated::class
+        'activated' => CheckIsUserActivated::class,
+        'smsVerified' => \App\Http\Middleware\CheckUserVerified::class
     ];
 }

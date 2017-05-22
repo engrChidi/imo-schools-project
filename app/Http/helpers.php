@@ -23,3 +23,10 @@
     function dateForHumans($date){
         return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date)->diffForHumans();
     }
+
+    function maskPhoneNumber($number)
+    {
+        $mask_number =  str_repeat("*", strlen($number)-4) . substr($number, -4);
+
+        return $mask_number;
+    }

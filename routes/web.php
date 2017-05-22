@@ -118,3 +118,21 @@
         'as'        =>      'update-business-details'
     ]);
 
+
+    /* Routes for OTP within the application */
+    Route::group(['middleware' => 'auth'], function(){
+        Route::post('/sendOtp',[
+            'uses'       =>      'UserController@sendOtp',
+            'as'        =>      'sendOtp'
+        ]);
+
+        Route::post('/verifyOtp',[
+            'uses'       =>      'UserController@verifyOtp',
+            'as'        =>      'verifyOtp'
+        ]);
+
+        Route::get('/verifyOtp',[
+            'uses'       =>      'UserController@getVerifyOtp',
+            'as'        =>      'getVerifyOtp'
+        ]);
+    });

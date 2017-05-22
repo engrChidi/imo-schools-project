@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Activation;
-use App\Traits\SmsActivationTrait;
+use App\Traits\ActivationTrait;
 use Illuminate\Http\Request;
 
 class ActivationController extends Controller
 {
-    use SmsActivationTrait;
+    use ActivationTrait;
     public function activate($token)
     {
         if (auth()->user()->activated) {

@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\SmsActivationTrait;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    use SmsActivationTrait;
     public function checkUser()
     {
         if( auth()->user()->hasRole('teacher')){
@@ -86,6 +91,35 @@ class UserController extends Controller
     public function usertypeUpdate(Request $request, $id)
     {
         $input = $request->all();
+
         dd('Update user info and assign role accordingly');
+    }
+
+    /**
+     * Function to display OTP verification page
+     */
+    public function getVerifyOtp()
+    {
+        return view('auth.verification');
+    }
+
+    public function verifyOtp(Request $request)
+    {
+        $enteredOtp = $request->input('otp');
+
+        $OTP = $request->session()->get('OTP');
+
+        if($OTP == $enteredOtp){
+            $user_verified = User::where('id', Auth::user()->id)->update([
+               'isVerified'     =>      TRUE
+            ]);
+
+            //Session variable removed
+            Session::forget('OTP');
+
+            return redirect()->route('check-user-details');
+        }else {
+            return redirect()->back()->with('Error', 'OTP does not exist');
+        }
     }
 }

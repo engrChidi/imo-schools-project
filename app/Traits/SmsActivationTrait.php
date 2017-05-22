@@ -1,42 +1,66 @@
 <?php
-namespace   App\Traits;
 
+    namespace App\Traits;
+    use GuzzleHttp\Exception\GuzzleException;
+    use GuzzleHttp\Client;
+    use GuzzleHttp\Psr7;
+    use GuzzleHttp\Exception\RequestException;
+    use App\User;
 
-use App\Logic\Activation\ActivationRepository;
-use App\User;
-use Illuminate\Support\Facades\Validator;
-
-trait SmsActivationTrait
-{
-
-    public function initiateEmailActivation(User $user)
+    trait SmsActivationTrait
     {
+//        private $SMS_USERNAME = config('settings.username_sms');
+//        private $SMS_PASSWORD = config('settings.password_sms');
+        private $SMS_SENDER = "ImoSchools";
+        private $RESPONSE_TYPE = 'json';
 
-        if ( !config('settings.activation')  || !$this->validateEmail($user)) {
+        public function initiateSmsActivation($user_phone_number, $OTP){
+            $isError = 0;
+            $errorMessage = true;
 
-            return true;
+            //Your message to send, Adding URL encoding.
+//            $message = urlencode("Welcome to Imoschools web application. Your OTP is : $OTP");
+            $message = "Welcome to Imoschools web application. Your OTP is : $OTP";
 
+            //Preparing post parameters
+            $postData = array(
+                'username' => config('settings.username_sms'),
+                'password' => config('settings.password_sms'),
+                'mobiles' => $user_phone_number,
+                'message' => $message,
+                'sender' => $this->SMS_SENDER,
+                'response' => $this->RESPONSE_TYPE
+            );
+
+            $url = "http://portal.bulksmsnigeria.net/api/";
+
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => $postData
+            ));
+
+
+            //Ignore SSL certificate verification
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+
+            //get response
+            $output = curl_exec($ch);
+
+            //Print error if any
+            if (curl_errno($ch)) {
+                $isError = true;
+                $errorMessage = curl_error($ch);
+            }
+            curl_close($ch);
+            if($isError){
+                return array('error' => 1 , 'message' => $errorMessage);
+            }else{
+                return array('error' => 0 );
+            }
         }
-
-        $activationRepostory = new ActivationRepository();
-
-        $activationRepostory->createTokenAndSendEmail($user);
-
     }
-
-    protected function validateEmail(User $user)
-    {
-
-        // Check does email posses valid format, cause if it's social account without
-        // email, it'll have value of missingxxxxxxxxxx
-        $validator = Validator::make(['email' => $user->email], ['email' => 'required|email']);
-
-        if ($validator->fails()) {
-            return false; // Stopping job execution, if it return false it will break entire application
-        }
-
-        return true;
-
-    }
-
-}

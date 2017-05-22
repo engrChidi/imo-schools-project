@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Role;
-use App\User;
 use App\Traits\SmsActivationTrait;
+use App\User;
+use App\Traits\ActivationTrait;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -23,6 +25,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use ActivationTrait;
     use SmsActivationTrait;
 
     /**
@@ -86,9 +89,21 @@ class RegisterController extends Controller
             'reg_completed' =>  TRUE
         ]);
 
+        // OTP value
+        $otp = rand(100000, 999999);
+
         $user_type = strtolower($data['usertype']);
         $role = Role::whereName($user_type)->first();
+
+        //Assign roles to the user
         $user->assignRole($role);
+
+        //Send sms to the user for phone number activation
+        $this->initiateSmsActivation($data['phone_number'],$otp);
+        //set session variable
+        Session::put('OTP', $otp);
+
+        // Send Email to the registered user
         $this->initiateEmailActivation($user);
         return $user;
     }
