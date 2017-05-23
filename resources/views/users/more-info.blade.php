@@ -12,6 +12,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading text-center">Tell us who you are</div>
                         <div class="panel-body">
+                            @if(Auth::user())
                             <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('usertype-update', auth()->user()->id) }}">
                                 {{ csrf_field() }}
 
@@ -49,6 +50,7 @@
                                     </div>
                                 </fieldset>
                             </form>
+                                @endif
                         </div>
                     </div>
                 </div>

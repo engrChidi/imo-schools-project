@@ -15,14 +15,9 @@ class CheckUserType
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->isVerified == false){
-            return redirect()->route('getVerifyOtp');
-        }
-
-        if( is_null(auth()->user()->usertype)){
+        if(is_null(auth()->user()->usertype)){
             return redirect()->route('more-info');
         }
-
         return $next($request);
     }
 }

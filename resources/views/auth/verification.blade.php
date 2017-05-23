@@ -41,6 +41,8 @@
 
                                 </fieldset>
 
+                                <p>Didn't receive the OTP? <span id="otp_resend_btn" class="label label-info">Click here</span></p>
+
                                 <fieldset class="form-group">
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-success auth_button">
@@ -55,6 +57,5 @@
             </div>
         </div>
     </div>
-
     @include('partials.footer')
 @endsection

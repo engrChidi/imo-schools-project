@@ -22,6 +22,38 @@
 </head>
 <body>
     <div id="app">
+
+        <!-- Modal for OTP resend or not received -->
+        <div class="modal fade" id="noOTPModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" id="" role="document">
+                <div id="modalContent" class="modal-content">
+                    <div id="modalHeader" class="modal-header text-center">
+                        <h4> Imo Schools </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modBody" class="mod">
+                            <h4 class="">No OTP yet?</h4>
+                            <ul>
+                                <li>( 1 ) Please be patient - Sometimes it takes a while for text messages to arrive.</li>
+                                <li>( 2 ) You might just be experiencing network delay</li>
+                                <li>
+                                    <form id="resendOTPForm" action="" accept-charset="UTF-8" method="post">
+                                        {{csrf_field()}}
+                                        {{--<input name="utf8" type="hidden" value="&#x2713;" />--}}
+                                        ( 3 ) Haven't received OTP after  20mins? Click the button below for a new code:
+                                        <button id="resendLinkBtn" name="button" type="submit" class="btn btn-success">Resend OTP</button>
+                                    </form>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <nav class="navbar navbar-default navbar-static-top">
             @include('partials.above-navbar-alert')
             <div class="container">
@@ -93,5 +125,46 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/home.js') }}"></script>
+
+    <script type="text/javascript">
+        $('#otp_resend_btn').click(function(){
+            $('#noOTPModal').modal('show')
+        })
+    </script>
+
+    <script type="text/javascript">
+        @if(Session::has('Success'))
+            new Noty({
+            type: 'success',
+            layout: 'topRight',
+            theme: 'mint',
+            text: '{{ Session::get('Success') }}',
+            timeout: 5000,
+            progressBar: true,
+            closeWith: ['click', 'button'],
+            animation: {
+                open: 'noty_effects_open',
+                close: 'noty_effects_close'
+            },
+            id: false,
+            force: false,
+            killer: false,
+            queue: 'global',
+            container: false,
+            buttons: [],
+            sounds: {
+                sources: [],
+                volume: 1,
+                conditions: []
+            },
+            titleCount: {
+                conditions: []
+            },
+            modal: false
+
+//            template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+        }).show();
+        @endif
+    </script>
 </body>
 </html>

@@ -18,7 +18,7 @@
     Auth::routes();
 
     // Don't forget to add activated middleware to this route
-    Route::group(['middleware' => 'usertype'], function(){
+    Route::group(['middleware' => ['usertype', 'smsVerified']], function(){
         Route::get('/home', 'HomeController@index')->name('home');
     });
 
@@ -41,7 +41,7 @@
         'as'        =>      'check-user-details'
     ]);
 
-    Route::group(['prefix' => 'user', 'middleware' => ['auth', 'usertype']], function()
+    Route::group(['prefix' => 'user', 'middleware' => ['auth', 'usertype', 'smsVerified']], function()
     {
         Route::get('/teacher', [
             'uses'      =>      'UserController@showTeacher',
@@ -100,7 +100,7 @@
     Route::get('/more-info',[
        'uses'       =>      'UserController@moreInfo',
         'as'        =>      'more-info'
-    ]);
+    ])->middleware('auth');
 
     /* Route to update details for all users irrespective of the user type */
     Route::post('/update/schools-details/{id}', [

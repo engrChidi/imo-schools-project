@@ -9,8 +9,6 @@
 
     trait SmsActivationTrait
     {
-//        private $SMS_USERNAME = config('settings.username_sms');
-//        private $SMS_PASSWORD = config('settings.password_sms');
         private $SMS_SENDER = "ImoSchools";
         private $RESPONSE_TYPE = 'json';
 
@@ -19,7 +17,6 @@
             $errorMessage = true;
 
             //Your message to send, Adding URL encoding.
-//            $message = urlencode("Welcome to Imoschools web application. Your OTP is : $OTP");
             $message = "Welcome to Imoschools web application. Your OTP is : $OTP";
 
             //Preparing post parameters

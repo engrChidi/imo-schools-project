@@ -91,8 +91,25 @@ class UserController extends Controller
     public function usertypeUpdate(Request $request, $id)
     {
         $input = $request->all();
+        $this->validate($request,[
+            'usertype'     =>       'required',
+            'phone_number'  =>      'required'
+        ]);
 
-        dd('Update user info and assign role accordingly');
+        $user_update = User::where('id', $id)->update([
+            'usertype'      =>      $request->usertype,
+            'phone_number'  =>      $request->phone_number
+        ]);
+
+        // OTP value
+        $otp = rand(100000, 999999);
+
+        $this->initiateSmsActivation($request->phone_number, $otp);
+
+        //set session variable
+        Session::put('OTP', $otp);
+
+        return redirect()->route('check-user-details');
     }
 
     /**
@@ -117,7 +134,7 @@ class UserController extends Controller
             //Session variable removed
             Session::forget('OTP');
 
-            return redirect()->route('check-user-details');
+            return redirect()->route('check-user-details')->with('Success', 'Your phone number has been successfully verified');
         }else {
             return redirect()->back()->with('Error', 'OTP does not exist');
         }
