@@ -15,4 +15,9 @@ class PageController extends Controller
     {
         return view('pages.terms');
     }
+
+    public function getAbout()
+    {
+        return view('pages.about');
+    }
 }

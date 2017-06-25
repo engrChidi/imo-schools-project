@@ -15,6 +15,7 @@
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style-2.css') }}" rel="stylesheet">
     @yield('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,70 +55,199 @@
         </div>
 
 
-        <nav class="navbar navbar-default navbar-static-top">
-            @include('partials.above-navbar-alert')
-            <div class="container">
-                <div class="navbar-header">
+        <!-- Main Header Start -->
+        <header class="irs-main-header smaller">
+            <div class="irs-header-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="irs-header-top-col irs-center-2">
+                                <p><i class="fa fa-phone" aria-hidden="true"></i> +23408000000000</p>
+                            </div>
+                        </div>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    @if((Auth::user()->full_name()))
-                                     {{ Auth::user()->email }}
-                                    @else
-                                    {{ Auth::user()->full_name() }}
-                                    @endif
-                                    <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('check-user-details') }}">
-                                           Dashboard
-                                        </a>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
+                        <div class="col-md-6 col-sm-4 text-center">
+                            <div class="irs-header-top-col irs-center-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="search" placeholder="Search for a good school in Imo State...">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Search!</button>
+                                      </span>
+                                </div><!-- /input-group -->
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                            <div class="irs-header-top-col text-right irs-center-2">
+                                <div class="irs-social text-right irs-center-2">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+            {{--<div class="irs-header-nav scrollingto-fixed scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1279px; left: 0px;">--}}
+            <div class="irs-header-nav scrollingto-fixed scroll-to-fixed-fixed">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-12">
+                            <nav class="navbar navbar-default irs-navbar">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="{{url('/')}}">
+                                            <span>Good Schools</span>
+                                        </a>
+                                    </div>
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="flipInY">
+                                            <li class="dropdown active">
+                                                <a href="{{ url('/') }}" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Home </a>
+                                            </li>
+                                            <li><a href="{{ route('about') }}">About</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activities <i class="fa fa-angle-down"></i></a>
+                                                <ul class="dropdown-menu dropdownhover-bottom">
+                                                    <li><a href="#">News</a>
+                                                    </li>
+                                                    <li><a href="#">Events</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="#">Downloads</a>
+                                            </li>
+
+                                            <li><a href="#">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.navbar-collapse -->
+                                </div>
+                                <!-- /.container-fluid -->
+                            </nav>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="irs-log-reg">
+
+                                @if (Auth::guest())
+                                    <a href="#">Login</a>
+{{--                                    <a href="{{ route('login') }}">Login</a>--}}
+                                    <span>/</span>
+                                    <a href="#">Register</a>
+                                    {{--<a href="{{ route('register') }}">Register</a>--}}
+                                @else
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            @if((Auth::user()->full_name()))
+                                                {{ Auth::user()->email }}
+                                            @else
+                                                {{ Auth::user()->full_name() }}
+                                            @endif
+                                            <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ route('check-user-details') }}">
+                                                    Dashboard
+                                                </a>
+                                                <a href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{--<div style="display: block; width: 1279px; height: 90px; float: none;"></div>--}}
+        </header>
+        <!-- Main Header end -->
+
+        {{--<nav class="navbar navbar-default navbar-static-top">--}}
+            {{--@include('partials.above-navbar-alert')--}}
+            {{--<div class="container">--}}
+                {{--<div class="navbar-header">--}}
+
+                    {{--<!-- Collapsed Hamburger -->--}}
+                    {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">--}}
+                        {{--<span class="sr-only">Toggle Navigation</span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                    {{--</button>--}}
+
+                    {{--<!-- Branding Image -->--}}
+                    {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+                        {{--{{ config('app.name', 'Laravel') }}--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+
+                {{--<div class="collapse navbar-collapse" id="app-navbar-collapse">--}}
+                    {{--<!-- Left Side Of Navbar -->--}}
+                    {{--<ul class="nav navbar-nav">--}}
+                        {{--&nbsp;--}}
+                    {{--</ul>--}}
+
+                    {{--<!-- Right Side Of Navbar -->--}}
+                    {{--<ul class="nav navbar-nav navbar-right">--}}
+                        {{--<!-- Authentication Links -->--}}
+                        {{--@if (Auth::guest())--}}
+                            {{--<li><a href="{{ route('login') }}">Login</a></li>--}}
+                            {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
+                        {{--@else--}}
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+                                    {{--@if((Auth::user()->full_name()))--}}
+                                     {{--{{ Auth::user()->email }}--}}
+                                    {{--@else--}}
+                                    {{--{{ Auth::user()->full_name() }}--}}
+                                    {{--@endif--}}
+                                    {{--<span class="caret"></span>--}}
+                                {{--</a>--}}
+
+                                {{--<ul class="dropdown-menu" role="menu">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="{{ route('check-user-details') }}">--}}
+                                           {{--Dashboard--}}
+                                        {{--</a>--}}
+                                        {{--<a href="{{ route('logout') }}"--}}
+                                            {{--onclick="event.preventDefault();--}}
+                                                     {{--document.getElementById('logout-form').submit();">--}}
+                                            {{--Logout--}}
+                                        {{--</a>--}}
+
+                                        {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+                                            {{--{{ csrf_field() }}--}}
+                                        {{--</form>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</nav>--}}
 
         @yield('content')
     </div>
@@ -130,6 +260,70 @@
         $('#otp_resend_btn').click(function(){
             $('#noOTPModal').modal('show')
         })
+    </script>
+
+    <!-- script start from here -->
+    {{--<script type="text/javascript" src="./jquery.js"></script>--}}
+    {{--<script type="text/javascript" src="./bootstrap.min.js"></script>--}}
+    {{--<script type="text/javascript" src="./bootstrap-dropdownhover.min.js"></script>--}}
+    {{--<script type="text/javascript" src="./jquery-ui.js"></script>--}}
+    <script type="text/javascript" src="{{'js/jquery-scrolltofixed-min.js'}}"></script>
+    {{--<script type="text/javascript" src="./isotope.js"></script>--}}
+    {{--<script type="text/javascript" src="./stellar.js"></script>--}}
+    {{--<script type="text/javascript" src="./owl.carousel.min.js"></script>--}}
+    {{--<script type="text/javascript" src="./jquery.magnific-popup.min.js"></script>--}}
+    {{--<script type="text/javascript" src="./jquery.masonry.min.js"></script>--}}
+    {{--<script type="text/javascript" src="./css3-animate-it.js"></script>--}}
+    {{--<script type="text/javascript" src="./bootstrap-slider.js"></script>--}}
+    {{--<script type="text/javascript" src="./jquery.scrollUp.js"></script>--}}
+    {{--<script type="text/javascript" src="./classie.js"></script>--}}
+
+    <!-- Custom script for all pages -->
+    <script type="text/javascript" src="{{'js/script.js'}}"></script>
+
+    <!-- Show current date on the website -->
+
+    <script>
+        var n = new Date();
+            y = n.getFullYear();
+            m = n.getMonth();
+            d = n.getDate();
+            document.getElementById('date').innerHTML = m + "/" + d + "/" + y;
+    </script>
+
+    <!-- Funfact START -->
+    <script type="text/javascript">
+        $(document).ready(function($) {
+            $('.start-count').each(function() {
+                var $this = $(this);
+                $this.data('target', parseInt($this.html()));
+                $this.data('counted', false);
+                $this.html('0');
+            });
+
+            $(window).bind('scroll', function() {
+                var speed = 3000;
+                $('.start-count').each(function() {
+                    var $this = $(this);
+                    if (!$this.data('counted') && $(window).scrollTop() + $(window).height() >= $this.offset().top) {
+                        $this.data('counted', true);
+                        $this.animate({
+                            dummy: 1
+                        }, {
+                            duration: speed,
+                            step: function(now) {
+                                var $this = $(this);
+                                var val = Math.round($this.data('target') * now);
+                                $this.html(val);
+                                if (0 < $this.parent('.value').length) {
+                                    $this.parent('.value').css('width', val + '%');
+                                }
+                            }
+                        });
+                    }
+                });
+            }).triggerHandler('scroll');
+        });
     </script>
 
     <script type="text/javascript">

@@ -119,6 +119,13 @@
     ]);
 
 
+    /* Route for about us page*/
+    Route::get('/good-school/about',[
+       'uses' => 'PageController@getAbout',
+        'as'  => 'about'
+    ]);
+
+
     /* Routes for OTP within the application */
     Route::group(['middleware' => 'auth'], function(){
         Route::post('/sendOtp',[
