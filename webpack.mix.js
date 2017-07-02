@@ -16,6 +16,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css/style.css')
     .sass('resources/assets/sass/admin.scss', 'public/css/admin.css')
     .sass('resources/assets/sass/home.scss', 'public/css/home.css')
+    .sass('resources/assets/sass/pages.scss', 'public/css/pages.css')
     .options({
         processCssUrls: false
     });

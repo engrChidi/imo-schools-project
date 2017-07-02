@@ -34,6 +34,26 @@
         'as'        =>      'terms'
     ]);
 
+    Route::get('/all/teachers', [
+       'uses'       =>      'TeachersController@allTeachers',
+        'as'        =>      'all_teachers'
+    ]);
+
+    Route::get('/teacher/details', [
+       'uses'   =>  'TeachersController@getTeacher',
+        'as'    =>  'teacher_details'
+    ]);
+
+    Route::get('/all/schools', [
+       'uses'       =>      'SchoolsController@allSchools',
+        'as'        =>      'all_schools'
+    ]);
+
+    Route::get('/school/profile', [
+        'uses'       =>      'SchoolsController@getSchool',
+        'as'        =>      'school_profile'
+    ]);
+
     /* Route to check usertype for a particular user */
 
     Route::get('/check-users-details', [

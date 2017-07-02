@@ -1,0 +1,27 @@
+#teachers_overlay {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  height: 400px;
+  padding: 120px 0;
+}
+
+#teachers_overlay span {
+  font-size: 40px;
+}
+
+.teachers_wrapper {
+  text-align: center;
+  height: 400px;
+  background: url(../images/teacher_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#teacher_heading {
+  display: inline-block;
+  margin: auto;
+  padding: 30px 60px;
+  border: 1px solid rgba(244, 164, 96, 0.3);
+  color: #F4A460;
+}

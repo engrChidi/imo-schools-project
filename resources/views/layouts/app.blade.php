@@ -15,6 +15,7 @@
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/pages.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-2.css') }}" rel="stylesheet">
     @yield('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -153,11 +154,11 @@
                             <div class="irs-log-reg">
 
                                 @if (Auth::guest())
-                                    <a href="#">Login</a>
-{{--                                    <a href="{{ route('login') }}">Login</a>--}}
+                                    {{--<a href="#">Login</a>--}}
+                                    <a href="{{ route('login') }}">Login</a>
                                     <span>/</span>
-                                    <a href="#">Register</a>
-                                    {{--<a href="{{ route('register') }}">Register</a>--}}
+                                    {{--<a href="#">Register</a>--}}
+                                    <a href="{{ route('register') }}">Register</a>
                                 @else
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

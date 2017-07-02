@@ -138,7 +138,7 @@
             <div class="row animatedParent animateOnce">
                 <div class="col-sm-6 col-md-3">
                     <div class="ct-productBox ct-u-marginBottom30">
-                        <a href="#">
+                        <a href="{{ route('school_profile') }}">
                             <div class="ct-productImage">
                                 <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
                             </div>
@@ -397,7 +397,7 @@
             <div class="row animatedParent animateOnce">
                 <div class="col-md-3 col-sm-6">
                     <div class="irs-teachers-col animated fadeInUpShort slow delay-250 go">
-                        <a href="#"><img src="{{'images/1(2).jpg'}}" alt="">
+                        <a href="{{ route('teacher_details') }}"><img src="{{url('images/1(2).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
                             <h4><a href="#">Rosi Jqulin</a></h4>
@@ -413,7 +413,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="irs-teachers-col animated fadeInUpShort slow delay-500 go">
-                        <a href="#"><img src="{{'images/2(2).jpg'}}" alt="">
+                        <a href="{{ route('teacher_details') }}"><img src="{{url('images/2(2).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
                             <h4><a href="#">Ross Taylor</a></h4>
@@ -429,7 +429,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="irs-teachers-col animated fadeInUpShort slow delay-750 go">
-                        <a href="#"><img src="{{'images/3(2).jpg'}}" alt="">
+                        <a href="{{ route('teacher_details') }}"><img src="{{url('images/3(2).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
                             <h4><a href="#">Jessi Taylor</a></h4>
@@ -445,7 +445,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="irs-teachers-col animated fadeInUpShort slow delay-1000 go">
-                        <a href="#"><img src="{{'images/4(1).jpg'}}" alt="">
+                        <a href="{{ route('teacher_details') }}"><img src="{{url('images/4(1).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
                             <h4><a href="#">Julio Jesus</a></h4>
@@ -460,10 +460,29 @@
                     </div>
                 </div>
             </div>
-            <br><br>
-            <div class="form-group text-center">
-                <a class="btn btn-default irs-btn-transparent" href="#" role="button">See Others</a>
+
+            <div class="form-group">
+                <div class="teacher_search_form_wrapper text-center">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 text-center">
+                        <h3>Search and Rate a Teacher</h3>
+                        <form>
+                            <div class="input-group">
+                                <input placeholder="Teachers Name" id="teachers_search" class="form-control" name="teacher_name" type="text">
+                                <span class="input-group-btn">
+			                    	<button type="submit" class="btn">Search</button>
+			                    </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+
+            <div class="clearfix"></div>
+            <br><br><br>
+            <div class="form-group text-center">
+                <a class="btn btn-default irs-btn-transparent" href="{{ route('all_teachers') }}" role="button">See All Teachers</a>
+            </div>
+            <br><br>
         </div>
     </section>
     <!-- Teachers  end -->
