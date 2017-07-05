@@ -116,6 +116,91 @@
     </section>
     <!-- About end -->
 
+    <section class="irs-about-field">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="irs-section-title">
+                        <h2>Search <span>Schools</span></h2>
+                        <div class="irs-title-line">
+                            <div class="irs-title-icon">
+                                <i class="icofont icofont-education"></i>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam est dolorem quaerat harum sequi, nesciunt consequatur magni voluptatem similique </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+
+                </div>
+
+                <div class="col-md-5">
+                    <form action="#">
+                        <div class="form-group">
+                            <select id="local_government" class="form-control" name="local_government">
+                                <option value disabled selected> Select LGA</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="school_type" class="form-control" name="schoolType">
+                                <option value disabled selected>Choose A School Type</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="verified_schools" class="form-control" name="verifySchools">
+                                <option value disabled selected>Verified or Unverified</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="facilities_school" class="form-control" name="facilities">
+                                <option value disabled selected>Select an option</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="skill_type" class="form-control" name="skillType">
+                                <option value disabled selected>Select an Skill Type</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">
+                                <span class="fa fa-search"></span>&nbsp;&nbsp;&nbsp; Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Public Schools -->
     <section class="irs-about-field">
