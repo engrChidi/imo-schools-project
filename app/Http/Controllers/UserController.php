@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
+
 class UserController extends Controller
 {
     use SmsActivationTrait;
@@ -77,8 +78,9 @@ class UserController extends Controller
     public function updateDetailsTeacher(Request $request, $id)
     {
         $input = $request->all();
-        dd($input);
-//        dd('Hey, you are a teacher with an id ' . ' ' . $id);
+
+
+
     }
 
     public function updateDetailsBusiness(Request $request, $id)
@@ -122,21 +124,42 @@ class UserController extends Controller
 
     public function verifyOtp(Request $request)
     {
-        $enteredOtp = $request->input('otp');
+        return redirect()->route('check-user-details');
 
-        $OTP = $request->session()->get('OTP');
 
-        if($OTP == $enteredOtp){
-            $user_verified = User::where('id', Auth::user()->id)->update([
-               'isVerified'     =>      TRUE
-            ]);
+        // Ensure to modify the OTP later 
+        // $enteredOtp = $request->input('otp');
 
-            //Session variable removed
-            Session::forget('OTP');
+        // $OTP = $request->session()->get('OTP');
 
-            return redirect()->route('check-user-details')->with('Success', 'Your phone number has been successfully verified');
-        }else {
-            return redirect()->back()->with('Error', 'OTP does not exist');
-        }
+        // if($OTP == $enteredOtp){
+        //     $user_verified = User::where('id', Auth::user()->id)->update([
+        //        'isVerified'     =>      TRUE
+        //     ]);
+
+        //     //Session variable removed
+        //     Session::forget('OTP');
+
+        //     return redirect()->route('check-user-details')->with('Success', 'Your phone number has been successfully verified');
+        // }else {
+        //     return redirect()->back()->with('Error', 'OTP does not exist');
+        // }
+    }
+
+    public function editTeachersProfile(Request $request, $id)
+    {
+        $profile = User::where('id', $id)->get();
+
+        return view('users.edit-teacher', compact('profile'));
+    }
+
+    public function editStudentsProfile(Request $request)
+    {
+        $profile_student = User::where('id', Auth::user()->id )->update([
+            'first_name'    =>  $request['first_name'],
+            'last_name'    =>  $request['last_name'],
+            'phone_number'    =>  $request['phone_number'],
+            'description'    =>  $request['description']
+        ]);
     }
 }

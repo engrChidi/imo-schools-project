@@ -8,7 +8,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <p> You are yet ti be Authenticated, Kindly check your phone for the Authentication code </p>
+            <p> You are yet to be Authenticated, Kindly check your phone for the Authentication code </p>
         </div>
     </div>
 @endsection

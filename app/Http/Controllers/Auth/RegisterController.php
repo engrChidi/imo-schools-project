@@ -33,7 +33,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+//    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -99,17 +100,18 @@ class RegisterController extends Controller
         $user->assignRole($role);
 
         //Send sms to the user for phone number activation
-        $this->initiateSmsActivation($data['phone_number'],$otp);
+        //Todo unComment this out later
+        // $this->initiateSmsActivation($data['phone_number'],$otp);
         //set session variable
-        Session::put('OTP', $otp);
+        // Session::put('OTP', $otp);
 
         // Send Email to the registered user
-        $this->initiateEmailActivation($user);
+        // $this->initiateEmailActivation($user);
         return $user;
     }
 
-    protected function redirectTo(){
+//    protected function redirectTo(){
         //Check users' type and redirect accordingly
-        return '/check-users-details';
-    }
+//        return '/check-users-details';
+//    }
 }

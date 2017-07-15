@@ -12,7 +12,9 @@ Register | {{ config('app.name', 'Laravel') }} | Platform for comparing schools 
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Register</div>
                     <div class="panel-body">
+                    <!-- 
                         <div class="text-center">
+                        
                             <fieldset class="form-group">
                                 <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">
                                     <button class="btn btn-success _facebook">
@@ -35,6 +37,7 @@ Register | {{ config('app.name', 'Laravel') }} | Platform for comparing schools 
                             Or Register with Email
                         </div>
                         <hr>
+                        -->
                         <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
 

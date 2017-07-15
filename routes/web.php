@@ -18,7 +18,7 @@
     Auth::routes();
 
     // Don't forget to add activated middleware to this route
-    Route::group(['middleware' => ['usertype', 'smsVerified']], function(){
+    Route::group(['middleware' => ['usertype']], function(){
         Route::get('/home', 'HomeController@index')->name('home');
     });
 
@@ -61,7 +61,7 @@
         'as'        =>      'check-user-details'
     ]);
 
-    Route::group(['prefix' => 'user', 'middleware' => ['auth', 'usertype', 'smsVerified']], function()
+    Route::group(['prefix' => 'user', 'middleware' => ['auth', 'usertype']], function()
     {
         Route::get('/teacher', [
             'uses'      =>      'UserController@showTeacher',
@@ -163,3 +163,16 @@
             'as'        =>      'getVerifyOtp'
         ]);
     });
+
+
+    /*Route for editing profiles for all users irrespective*/
+
+    Route::post('/user/teacher/{id}',[
+        'uses'  =>  'UserController@editTeachersProfile',
+        'as'    =>  'editTeacher'
+    ]);
+
+    Route::post('/user/student', [
+       'uses'   =>  'UserController@editStudentsProfile',
+        'as'    =>  'update-profile-student'
+    ]);

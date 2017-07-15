@@ -12,6 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Login</div>
                     <div class="panel-body">
+                    <!--
                         <div class="text-center">
                             <fieldset class="form-group">
                                 <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">
@@ -34,6 +35,7 @@
                         <div class="text-center">
                             Or Login with Email
                         </div>
+                        -->
                         <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 
