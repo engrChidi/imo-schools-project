@@ -54,6 +54,20 @@
         'as'        =>      'school_profile'
     ]);
 
+
+    Route::get('/business/partners',[
+       'uses'   =>  'BusinessController@getBusiness',
+        'as'    =>  'all_business'
+    ]);
+
+
+    // Add school route
+    Route::get('/schools/add',[
+       'uses'   =>  'SchoolsController@addSchool',
+        'as'    =>  'addSchool'
+    ]);
+
+
     /* Route to check usertype for a particular user */
 
     Route::get('/check-users-details', [
@@ -167,7 +181,7 @@
 
     /*Route for editing profiles for all users irrespective*/
 
-    Route::post('/user/teacher/{id}',[
+    Route::get('/user/teacher/{id}',[
         'uses'  =>  'UserController@editTeachersProfile',
         'as'    =>  'editTeacher'
     ]);
@@ -175,4 +189,14 @@
     Route::post('/user/student', [
        'uses'   =>  'UserController@editStudentsProfile',
         'as'    =>  'update-profile-student'
+    ]);
+
+    Route::get('/user/school/{id}', [
+       'uses'   =>  'UserController@editSchoolsProfile',
+        'as'    =>  'editSchool'
+    ]);
+
+    Route::get('/user/business/{id}', [
+        'uses'   =>  'UserController@editBusinessProfile',
+        'as'    =>  'editBusiness'
     ]);

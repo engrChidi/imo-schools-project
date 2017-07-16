@@ -15,4 +15,9 @@ class SchoolsController extends Controller
     {
         return view('pages.single_school');
     }
+
+    public function addSchool()
+    {
+        return view('pages.add-school');
+    }
 }

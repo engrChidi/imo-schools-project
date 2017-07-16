@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 
     /**
      * Get the school associated with a particular user
@@ -89,5 +91,17 @@ class User extends Authenticatable
     public function full_name()
     {
         return $this->first_name. ' ' . $this->last_name;
+    }
+
+    public function getUserRole($id)
+    {
+        $userRoleId = DB::table('role_user')->where('user_id', $id)->pluck('role_id');
+
+        $userRole = DB::table('roles')->where('id', $userRoleId)->pluck('name');
+
+        foreach($userRole as $role){
+            return $role;
+        }
+
     }
 }

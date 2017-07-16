@@ -23,7 +23,7 @@
                     <div class="hero">
                         <span>Search for Schools and compare</span>
                         <h1>The best <strong>Schools in Imo State</strong></h1>
-                        <a href="#" class="btn btn-default irs-big-btn" role="button">Find Out More</a>
+                        <a href="#searchSchools" class="btn btn-default irs-big-btn" role="button">Find Out More</a>
                     </div>
                 </div>
                 <div class="item slides active">
@@ -31,7 +31,7 @@
                     <div class="hero">
                         <span>Best Teachers</span>
                         <h1>Search and Rate the <strong>Best Teachers</strong></h1>
-                        <a href="#" class="btn btn-default irs-big-btn" role="button">Start Now</a>
+                        <a href="#bestTeachers" class="btn btn-default irs-big-btn" role="button">Start Now</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                         </div>
                         <h4> Schools</h4>
                         <p> Be among the best schools in Imo State, get rated and recognized for excellent</p>
-                        <a class="btn btn-default irs-btn-transparent" href="#" role="button">Add your school</a>
+                        <a class="btn btn-default irs-btn-transparent" href="{{ route('addSchool') }}" role="button">Add your school</a>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                         </div>
                         <h4>Business</h4>
                         <p> Reach out to incredible audience on this fastest growing academic platform in Imo State</p>
-                        <a class="btn btn-default irs-btn-transparent" href="#" role="button">Start Here</a>
+                        <a class="btn btn-default irs-btn-transparent" href="{{ route('all_business') }}" role="button">Start Here</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
     <section class="irs-about-field">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div id="searchSchools" class="col-md-6 col-md-offset-3">
                     <div class="irs-section-title">
                         <h2>Search <span>Schools</span></h2>
                         <div class="irs-title-line">
@@ -467,7 +467,7 @@
     <section class="irs-teachers-field">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div id="bestTeachers" class="col-md-6 col-md-offset-3">
                     <div class="irs-section-title">
                         <h2>Top Rated <span>teachers</span></h2>
                         <div class="irs-title-line">

@@ -23,30 +23,6 @@
         <div class="container">
             <div class="row">
 
-                <div id="rateTeacherModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                            </div>
-
-                            <div class="modal-body">
-                                <p>This is a modal to rate teachers on the platform</p>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
                 <div class="col-md-4 col-sm-4">
                     <div class="irs-teacher-single-col">
                         <img src="{{url('images/4(1).jpg')}}" alt="teacher">
@@ -66,8 +42,8 @@
                             <ul>
                                 <li><strong>Name : </strong> {{ Auth::user()->first_name }} {{ Auth::user()->last_name}}</li>
                                 <li><strong>Subject You Teach  : </strong> </li>
-                                <li><strong>Experience : </strong> 8 years</li>
-                                <li><strong>Educational Qualification :</strong> BBA</li>
+                                <li><strong>Experience : </strong> {{ Auth::user()->experience }}</li>
+                                <li><strong>Educational Qualification :</strong> {{ Auth::user()->experience }}</li>
                                 <li><strong>Your Current Ratings : </strong>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>

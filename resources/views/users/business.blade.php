@@ -6,104 +6,74 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading text-center"> Update Details For Business Owners </div>
-                <div class="panel-body">
-                    <form class="form-horizontal auth_form" role="form" method="POST" action="{{ route('update-business-details', Auth::user()->id) }}">
-                        {{ csrf_field() }}
-                        <div class="col-md-6">
-                            <fieldset class="form-group{{ $errors->has('business_username') ? ' has-error' : '' }}">
-                                <label for="business_username" class="control-label"> Username</label>
-                                <input type="text" id="business_username" name="business_username" class="form-control" placeholder="Business Username" value="{{ old('business_username') }}">
-                                @if ($errors->has('business_username'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('business_username') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
+    <section class="teachers_wrapper">
+            <div id="teachers_overlay">
+                <div class="text-center" id="teacher_heading">
+                    <h2> Welcome on board</h2>
+                    <span class="fa fa-graduation-cap"></span>
+                    <h3> {{ Auth::user()->email }} </h3>
 
-                            <fieldset class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
-                                <label for="business_name" class="control-label"> Business Name</label>
-                                <input type="text" id="business_name" name="business_name" class="form-control" placeholder="Your Business Name" value="{{ old('business_name') }}">
-                                @if ($errors->has('business_name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('business_name') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
+                </div>
 
-                            <fieldset class="form-group{{ $errors->has('business_location') ? ' has-error' : '' }}">
-                                <label for="business_location" class="control-label"> Business Location</label>
-                                <input type="text" id="business_location" name="business_location" class="form-control" placeholder="Your Business Location" value="{{ old('business_location') }}">
-                                @if ($errors->has('business_location'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('business_location') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
-
-                            <fieldset class="form-group{{ $errors->has('business_phone') ? ' has-error' : '' }}">
-                                <label for="business_phone" class="control-label"> Business Phone Number </label>
-                                <input type="text" id="business_phone" name="business_phone" class="form-control" placeholder="Business Phone Number" value="{{ old('business_phone') }}">
-                                @if ($errors->has('business_phone'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('business_phone') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
-                        </div>
-
-                        <div class="col-md-6">
-                            <fieldset class="form-group{{ $errors->has('product') ? ' has-error' : '' }}">
-                                <label for="product" class="control-label"> Your Product </label>
-                                <input type="text" id="product" name="product" class="form-control" placeholder="Your Product" value="{{ old('product') }}">
-                                @if ($errors->has('product'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('product') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
-
-                            <fieldset id="comment_wrapper" class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}">
-                                <label for="comment" class="control-label"> Add Comment </label>
-                                <textarea class="form-control" name="comment" id="comment" cols="30" rows="5" placeholder="Post your comment here"></textarea>
-                                <span id="minimum_count" class="">Minimum of 150 characters</span>
-                                <span id="text_count" class="pull-right"></span>
-                                <div class="clear-fix"></div>
-                                @if ($errors->has('comment'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('comment') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
-
-                            <fieldset id="avatar_section" class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
-                                <label for="image_input_file" class="control-label">Upload Logo</label>
-                                <img src="" height="200" id="preview" alt="">
-                                <input name="avatar" type="file" id="image_input_file" class="form-control" onchange="previewImage()" accept="image/*">
-                                @if ($errors->has('avatar'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('avatar') }}</strong>
-                                    </span>
-                                @endif
-                            </fieldset>
-
-                            <fieldset class="form-group">
-                                <div class="g-recaptcha" data-sitekey="6Le40SEUAAAAAP9scWszcbSrjeHYL7qUJAvDlgkI"></div>
-                            </fieldset>
-                        </div>
-                        <div class="clearfix"></div>
-                        <fieldset class="form-group">
-                            <div class="">
-                                <button type="submit" class="btn btn-success auth_button">
-                                    Update
-                                </button>
-                            </div>
-                        </fieldset>
-                    </form>
+                <div class="form-group">
+                <p> Easiest way to reach out to a lot of customers </p>
+                <!-- Please note this  -->
+                <p> Change the styling to reflect that of a business </p>
                 </div>
             </div>
+        </section>
+
+        <section class="irs-teacher-single-field">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="irs-teacher-single-col">
+                            <img src="{{url('images/4(1).jpg')}}" alt="company-logo">
+                        </div>
+
+                        <div class="form-group">
+                            <!-- <button class="btn btn-success" data-toggle="modal" data-target="#rateTeacherModal"> -->
+                                <!-- Add Rating -->
+                                <!-- check the usertype to change the text on the button and control the
+                                modal to show -->
+                            <!-- </button> -->
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                        <div class="irs-teacher-single-col">
+                            <div class="irs-teacher-biography">
+                                <ul>
+                                    <li><strong>Business Name : </strong> {{ Auth::user()->first_name }} {{ Auth::user()->last_name}}</li>
+                                    <li><strong>Business Username  : </strong> </li>
+                                    <li><strong>Business Phone Number  : </strong> </li>
+                                    <li><strong>Experience : </strong> {{ Auth::user()->experience }}</li>
+                                    <li><strong>Educational Qualification :</strong> {{ Auth::user()->experience }}</li>
+                                    <li><strong>Products : </strong>
+                                        <i class="">Text Books</i>,
+                                        <i class=""> Educational Items</i>,
+                                        <i class="">Computer Accessories</i>,
+                                        <i class="">Motivational Books</i>,
+                                        <i class="">Other Items</i>
+
+                                    </li>
+
+                                    <li><strong>School: </strong></li>
+                                </ul>
+                                <p> Description of your Company</p>
+                                <p>{{ Auth::user()->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="form-group">
+        <a href="{{route('editBusiness',Auth::user()->id)}}">
+            <button class="form-control btn btn-success"> Edit Business Details </button>
+        </a>
         </div>
+
     </div>
-@endsection    
+@endsection

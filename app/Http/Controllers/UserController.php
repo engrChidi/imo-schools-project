@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Business;
+use App\School;
 use App\Traits\SmsActivationTrait;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -161,5 +163,17 @@ class UserController extends Controller
             'phone_number'    =>  $request['phone_number'],
             'description'    =>  $request['description']
         ]);
+    }
+
+    public function editSchoolsProfile(Request $request, $id)
+    {
+        $schoolProfile = School::where('user_id', $id);
+        return view('users.edit-school', compact('schoolProfile'));
+    }
+
+    public function editBusinessProfile(Request $request, $id)
+    {
+        $businessProfile = Business::where('user_id', $id);
+        return view('users.edit-school', compact('businessProfile'));
     }
 }
