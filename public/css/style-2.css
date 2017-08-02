@@ -315,6 +315,25 @@ h6 {
     background-repeat: no-repeat;
     background-image: url(../images/preloader.gif);
 }
+
+/* School search background */
+#schoolSearchSection {
+    background-image: url(../images/schools.jpeg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+}
+
+#searchTeacherHolder {
+    background-image: url(../images/teacher_background.jpg);
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+    /*padding: 20px 0;*/
+}
+
 /* ========== Header top css start ========== */
 .irs-header-top-bar {
     background: #F4A460;
@@ -583,12 +602,16 @@ h6 {
     background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-   background-image: url(../images/h3.jpg);
+   background-image: url(../images/african-image.jpg);
    position: relative; 
 }
 .fade-carousel .slides .slide-2 {
-   background-image: url(../images/h1.jpg);
+   background-image: url(../images/books.jpeg);
    position: relative; 
+}
+.fade-carousel .slides .slide-3 {
+    background-image: url(../images/sits.jpeg);
+    position: relative;
 }
 
 .fade-carousel .slides .slide-1:before, .fade-carousel .slides .slide-2:before,
@@ -2110,6 +2133,7 @@ h6 {
 .ct-productBox {
   border: 1px solid #dde2d7;
   background-color: #fff;
+    /*height:360px;*/
 }
 .ct-productBox .ct-productDescription {
   padding: 16px;

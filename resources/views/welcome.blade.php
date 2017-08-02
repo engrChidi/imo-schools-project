@@ -13,12 +13,13 @@
         <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#bs-carousel" data-slide-to="0" class=""></li>
-                <li data-target="#bs-carousel" data-slide-to="1" class="active"></li>
+                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bs-carousel" data-slide-to="1" class=""></li>
+                <li data-target="#bs-carousel" data-slide-to="2" class=""></li>
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item slides">
+                <div class="item slides active">
                     <div class="slide-1"></div>
                     <div class="hero">
                         <span>Search for Schools and compare</span>
@@ -26,12 +27,20 @@
                         <a href="#searchSchools" class="btn btn-default irs-big-btn" role="button">Find Out More</a>
                     </div>
                 </div>
-                <div class="item slides active">
+                <div class="item slides">
                     <div class="slide-2"></div>
                     <div class="hero">
                         <span>Best Teachers</span>
                         <h1>Search and Rate the <strong>Best Teachers</strong></h1>
                         <a href="#bestTeachers" class="btn btn-default irs-big-btn" role="button">Start Now</a>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-3"></div>
+                    <div class="hero">
+                        <span>Rate Schools</span>
+                        <h1>Submit reviews and rate <strong> Schools </strong></h1>
+                        <a href="#popularSchools" class="btn btn-default irs-big-btn" role="button">Start Now</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +74,9 @@
                                 <i class="icofont icofont-education"></i>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam est dolorem quaerat harum sequi, nesciunt consequatur magni voluptatem similique </p>
+                        <p>You can't go wrong, when you are well informed. This platform gives you an opportunity
+                            of selecting the best school
+                        </p>
                     </div>
                 </div>
             </div>
@@ -127,18 +138,21 @@
                                 <i class="icofont icofont-education"></i>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam est dolorem quaerat harum sequi, nesciunt consequatur magni voluptatem similique </p>
+                        <p>
+                            Academic success is important because it is strongly linked to
+                            the positive outcomes we all value. Search and compare schools today.
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-7">
+                <div id="schoolSearchSection" class="col-md-7">
 
                 </div>
 
-                <div class="col-md-5">
-                    <form action="#">
+                <div id="schoolSearchWrapper" class="col-md-5">
+                    <form id="schoolSearchForm" action="#">
                         <div class="form-group">
                             <select id="local_government" class="form-control" name="local_government">
                                 <option value disabled selected> Select LGA</option>
@@ -206,7 +220,7 @@
     <section class="irs-about-field">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div id="popularSchools" class="col-md-6 col-md-offset-3">
                     <div class="irs-section-title">
                         <h2>Popular <span>Schools</span></h2>
                         <div class="irs-title-line">
@@ -214,7 +228,10 @@
                                 <i class="icofont icofont-education"></i>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam est dolorem quaerat harum sequi, nesciunt consequatur magni voluptatem similique </p>
+                        <p>
+                            The following schools are tested and trusted. They are well known for
+                            outstanding academic excellence.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -225,11 +242,10 @@
                     <div class="ct-productBox ct-u-marginBottom30">
                         <a href="{{ route('school_profile') }}">
                             <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
+                                <img src="{{ url('images/logo33.jpg') }}" alt="Product">
                             </div>
                             <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 1</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
+                                <h5 class="ct-fw-600 ct-u-marginBottom10">Madonna International School</h5>
                             </div>
                         </a>
                         <div class="ct-productMeta">
@@ -248,11 +264,10 @@
                     <div class="ct-productBox ct-u-marginBottom30">
                         <a href="#">
                             <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
+                                <img src="{{ url('images/logo44.jpg') }}" alt="Product">
                             </div>
                             <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 2</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
+                                <h5 class="ct-fw-600 ct-u-marginBottom10">Umuhu Okabia Central Primary School</h5>
                             </div>
                         </a>
                         <div class="ct-productMeta">
@@ -272,11 +287,10 @@
                     <div class="ct-productBox ct-u-marginBottom30">
                         <a href="#">
                             <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
+                                <img src="{{ url('images/logo33.jpg') }}" alt="Product">
                             </div>
                             <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 3</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
+                                <h5 class="ct-fw-600 ct-u-marginBottom10">Evergreen star success Academy </h5>
                             </div>
                         </a>
                         <div class="ct-productMeta">
@@ -295,11 +309,10 @@
                     <div class="ct-productBox ct-u-marginBottom30">
                         <a href="#">
                             <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
+                                <img src="{{ url('images/logo44.jpg') }}" alt="Product">
                             </div>
                             <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 4</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
+                                <h5 class="ct-fw-600 ct-u-marginBottom10">Ray Jacobs Boarding School</h5>
                             </div>
                         </a>
                         <div class="ct-productMeta">
@@ -314,101 +327,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="clearfix visible-sm"></div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-productBox">
-                        <a href="#">
-                            <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
-                            </div>
-                            <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 5</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
-                            </div>
-                        </a>
-                        <div class="ct-productMeta">
-                            <div class="ct-u-displayTableVertical">
-                                <div class="ct-u-displayTableCell">
-                                    <div class="starrr" data-rating="4"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-star-o fa"></i></div>
-                                </div>
-                                <div class="ct-u-displayTableCell">
-                                    <span>Average Rating</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-productBox">
-                        <a href="#">
-                            <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
-                            </div>
-                            <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 6</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
-                            </div>
-                        </a>
-                        <div class="ct-productMeta">
-                            <div class="ct-u-displayTableVertical">
-                                <div class="ct-u-displayTableCell">
-                                    <div class="starrr" data-rating="4"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-star-o fa"></i></div>
-                                </div>
-                                <div class="ct-u-displayTableCell">
-                                    <span>Average Rating</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix visible-sm"></div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-productBox">
-                        <a href="#">
-                            <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
-                            </div>
-                            <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 7</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
-                            </div>
-                        </a>
-                        <div class="ct-productMeta">
-                            <div class="ct-u-displayTableVertical">
-                                <div class="ct-u-displayTableCell">
-                                    <div class="starrr" data-rating="4"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-star-o fa"></i></div>
-                                </div>
-                                <div class="ct-u-displayTableCell">
-                                    <span>Average Rating</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="ct-productBox">
-                        <a href="#">
-                            <div class="ct-productImage">
-                                <img src="{{ url('images/itemCart3.jpg') }}" alt="Product">
-                            </div>
-                            <div class="ct-productDescription">
-                                <h5 class="ct-fw-600 ct-u-marginBottom10">School 8</h5>
-                                <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean .</span>
-                            </div>
-                        </a>
-                        <div class="ct-productMeta">
-                            <div class="ct-u-displayTableVertical">
-                                <div class="ct-u-displayTableCell">
-                                    <div class="starrr" data-rating="4"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-star-o fa"></i></div>
-                                </div>
-                                <div class="ct-u-displayTableCell">
-                                    <span>Average Rating</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix visible-sm"></div>
             </div>
         </div>
     </section>
@@ -475,7 +393,10 @@
                                 <i class="icofont icofont-education"></i>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam est dolorem quaerat harum sequi, nesciunt consequatur magni voluptatem similique </p>
+                        <p>
+                           Top rated teachers are the ones that has demonstrated an ability to transform
+                            and extend knowledge and are highly rated by students and other teachers.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -485,7 +406,7 @@
                         <a href="{{ route('teacher_details') }}"><img src="{{url('images/1(2).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
-                            <h4><a href="#">Rosi Jqulin</a></h4>
+                            <h4><a href="#">Adekunle Lawal Christianah</a></h4>
                             <p>math teacher</p>
                         </div>
                         <div class="irs-teachers-social">
@@ -501,7 +422,7 @@
                         <a href="{{ route('teacher_details') }}"><img src="{{url('images/2(2).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
-                            <h4><a href="#">Ross Taylor</a></h4>
+                            <h4><a href="#">Anthony James </a></h4>
                             <p>english teacher</p>
                         </div>
                         <div class="irs-teachers-social">
@@ -517,7 +438,7 @@
                         <a href="{{ route('teacher_details') }}"><img src="{{url('images/3(2).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
-                            <h4><a href="#">Jessi Taylor</a></h4>
+                            <h4><a href="#">Clara John</a></h4>
                             <p>chemistry teacher</p>
                         </div>
                         <div class="irs-teachers-social">
@@ -533,7 +454,7 @@
                         <a href="{{ route('teacher_details') }}"><img src="{{url('images/4(1).jpg')}}" alt="">
                         </a>
                         <div class="irs-teachers-name">
-                            <h4><a href="#">Julio Jesus</a></h4>
+                            <h4><a href="#">Chioma Austin</a></h4>
                             <p>history teacher</p>
                         </div>
                         <div class="irs-teachers-social">
@@ -546,21 +467,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="teacher_search_form_wrapper text-center">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 text-center">
-                        <h3>Search and Rate a Teacher</h3>
-                        <form>
-                            <div class="input-group">
-                                <input placeholder="Teachers Name" id="teachers_search" class="form-control" name="teacher_name" type="text">
-                                <span class="input-group-btn">
-			                    	<button type="submit" class="btn">Search</button>
-			                    </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
 
             <div class="clearfix"></div>
             <br><br><br>
@@ -568,6 +475,24 @@
                 <a class="btn btn-default irs-btn-transparent" href="{{ route('all_teachers') }}" role="button">See All Teachers</a>
             </div>
             <br><br>
+        </div>
+
+        <div id="searchTeacherHolder" class="form-group">
+            <div id="searchTeacherOverlay">
+            <div class="teacher_search_form_wrapper text-center">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 text-center">
+                    <h3>Search and Rate a Teacher</h3>
+                    <form>
+                        <div class="input-group">
+                            <input placeholder="Teachers Name" id="teachers_search" class="form-control" name="teacher_name" type="text">
+                            <span class="input-group-btn">
+			                    	<button type="submit" class="btn">Search</button>
+			                    </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
         </div>
     </section>
     <!-- Teachers  end -->
