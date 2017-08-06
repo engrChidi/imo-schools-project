@@ -11,9 +11,14 @@
     |
     */
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+//    Route::get('/', function() {
+//        return view('welcome');
+//});
+
+    Route::get('/', [
+       'uses'   =>  'PageController@homePage',
+       'as' =>  'homepage'
+    ]);
 
     Auth::routes();
 

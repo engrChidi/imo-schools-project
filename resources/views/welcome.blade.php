@@ -340,7 +340,7 @@
                     <div class="irs-counter-col">
                         <i class="icofont icofont-users-alt-3"></i>
                         <div class="irs-funfact">
-                            <div class="start-count">52</div>
+                            <div class="start-count">{{ $schoolsCount }}</div>
                             <div class="clearfix"></div>
                             <h4>Schools</h4>
                         </div>
@@ -350,7 +350,7 @@
                     <div class="irs-counter-col">
                         <i class="icofont icofont-education"></i>
                         <div class="irs-funfact">
-                            <div class="start-count">32</div>
+                            <div class="start-count">{{ $teachersCount }}</div>
                             <div class="clearfix"></div>
                             <h4>Teachers</h4>
                         </div>
@@ -360,7 +360,7 @@
                     <div class="irs-counter-col">
                         <i class="icofont icofont-group-students"></i>
                         <div class="irs-funfact">
-                            <div class="start-count">2025</div>
+                            <div class="start-count">{{ $studentsCount }}</div>
                             <div class="clearfix"></div>
                             <h4>students</h4>
                         </div>
@@ -370,7 +370,7 @@
                     <div class="irs-counter-col">
                         <i class="icofont icofont-university"></i>
                         <div class="irs-funfact">
-                            <div class="start-count">36</div>
+                            <div class="start-count">{{ $partnersCount }}</div>
                             <div class="clearfix"></div>
                             <h4>Business Partners</h4>
                         </div>
@@ -482,11 +482,11 @@
             <div class="teacher_search_form_wrapper text-center">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 text-center">
                     <h3>Search and Rate a Teacher</h3>
-                    <form>
+                    <form id="searchForTeacherForm">
                         <div class="input-group">
                             <input placeholder="Teachers Name" id="teachers_search" class="form-control" name="teacher_name" type="text">
                             <span class="input-group-btn">
-			                    	<button type="submit" class="btn">Search</button>
+			                    	<button type="submit" class="btn btn-success">Search</button>
 			                    </span>
                         </div>
                     </form>

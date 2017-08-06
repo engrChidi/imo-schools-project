@@ -46,9 +46,20 @@
 
 #searchTeacherOverlay {
   background: rgba(0,0,0,0.4);
-  height: 150px;
+  height: 180px;
   padding: 30px 0 20px 0;
   color: #ffffff;
+}
+
+#searchForTeacherForm {
+  input {
+    height: 60px;
+  }
+
+  button {
+    height: 60px;
+    width:80px;
+  }
 }
 
 
