@@ -290,7 +290,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
     {{--<script type="text/javascript" src="./stellar.js"></script>--}}
-    {{--<script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>--}}
+    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
     {{--<script type="text/javascript" src="./jquery.magnific-popup.min.js"></script>--}}
     {{--<script type="text/javascript" src="./jquery.masonry.min.js"></script>--}}
     {{--<script type="text/javascript" src="./css3-animate-it.js"></script>--}}

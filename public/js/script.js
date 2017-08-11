@@ -143,87 +143,47 @@
 
 /*  ==================== OWL CAROUSEL AND OTHER SLIDER SCRIPT   ==================== */
     // Owl-News-carousel
-    if($('.irs-main-slider').length){
-        $('.irs-main-slider').owlCarousel({
-            autoplay: 5000,
-            loop:true,
-            margin:0,
-            dots: false,
-            nav:false,
-            autoplayHoverPause:false,
-            autoplay: true,
-            autoHeight:true,
-            smartSpeed: 2000,
-            navText: [
-              '<i class=""></i>',
-              '<i class=""></i>'
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                    center: false
-                },
-                480:{
-                    items:1,
-                    center: false
-                },
-                600: {
-                    items: 1,
-                    center: false
-                },
-                768: {
-                    items: 1
-                },
-                992: {
-                    items: 1
-                },
-                1200: {
-                    items: 1
-                }
-            }
-        })
-    }
-    // Owl-News-carousel 
-    if($('.irs-main-slider-style2').length){
-        $('.irs-main-slider-style2').owlCarousel({
-            loop:true,
-            margin:0,
-            dots: false,
-            nav:true,
-            autoplayHoverPause:false,
-            autoplay: true,
-            autoHeight:true,
-            animateIn: 'fadeIn',
-            smartSpeed: 500,
-            navText: [
-              '<i class="">P</i>',
-              '<i class="">N</i>'
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                    center: false
-                },
-                480:{
-                    items:1,
-                    center: false
-                },
-                600: {
-                    items: 1,
-                    center: false
-                },
-                768: {
-                    items: 1
-                },
-                992: {
-                    items: 1
-                },
-                1200: {
-                    items: 1
-                }
-            }
-        })
-    }
+    // if($('.irs-main-slider').length){
+    //     $('.irs-main-slider').owlCarousel({
+    //         autoplay: 5000,
+    //         loop:true,
+    //         margin:0,
+    //         dots: false,
+    //         nav:false,
+    //         autoplayHoverPause:false,
+    //         // autoplay: true,
+    //         autoHeight:true,
+    //         smartSpeed: 2000,
+    //         navText: [
+    //           '<i class=""></i>',
+    //           '<i class=""></i>'
+    //         ],
+    //         responsive: {
+    //             0: {
+    //                 items: 1,
+    //                 center: false
+    //             },
+    //             480:{
+    //                 items:1,
+    //                 center: false
+    //             },
+    //             600: {
+    //                 items: 1,
+    //                 center: false
+    //             },
+    //             768: {
+    //                 items: 1
+    //             },
+    //             992: {
+    //                 items: 1
+    //             },
+    //             1200: {
+    //                 items: 1
+    //             }
+    //         }
+    //     })
+    // }
+    // Owl-News-carousel
 
     // Owl-News-carousel
     if($('.irs-event-carousel').length){
@@ -234,7 +194,7 @@
             dots: false,
             nav:true,
             autoplayHoverPause:false,
-            autoplay: false,
+            // autoplay: false,
             autoHeight:false,
             smartSpeed: 2000,
             navText: [
@@ -285,7 +245,7 @@
             dots: true,
             nav:false,
             autoplayHoverPause:false,
-            autoplay: false,
+            // autoplay: false,
             autoHeight:false,
             smartSpeed: 2000,
             navText: [
