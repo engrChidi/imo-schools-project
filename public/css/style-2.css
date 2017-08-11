@@ -39,13 +39,8 @@
 @import "../css/font-awesome.min.css";
 @import "../css/font-awesome-animation.min.css";
 @import "../css/jquery-ui.css";
-@import "../css/animate.min.css";
-@import "../css/animations.css";
-@import "../css/owl.css";
-@import "../css/isotop.css";
-@import "../css/fancyBox.css";
-@import "../css/icofont.css";
-@import "../css/material-design-iconic-font.css";
+@import "../css/animate.css";
+@import "../css/owl.carousel.min.css";
 
 
 
@@ -1017,7 +1012,7 @@ h6 {
 /* ========== Counter css Start ========== */
 .irs-counter-field {
     padding: 100px 0 50px;
-    background: url(../images/bg/2.jpg);
+    /*background: url(../images/bg/2.jpg);*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

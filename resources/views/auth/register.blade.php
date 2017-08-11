@@ -67,6 +67,20 @@ Register | {{ config('app.name', 'Laravel') }} | Platform for comparing schools 
                                 @endif
                             </fieldset>
 
+                            <fieldset class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+                                <label for="gender" class="control-label">Gender</label>
+                                <select id="gender" class="form-control" name="gender" required>
+                                    <option value="-1" disabled selected> Select an option </option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                @if ($errors->has('gender'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </fieldset>
+
 
                             <fieldset class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="control-label">E-Mail Address</label>

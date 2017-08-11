@@ -17,10 +17,11 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <link href="{{ asset('css/pages.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-2.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     @yield('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">--}}
+    {{--<script src='https://www.google.com/recaptcha/api.js'></script>--}}
 </head>
 <body>
 <div id="preloader">
@@ -160,18 +161,25 @@
                                     {{--<a href="#">Register</a>--}}
                                     <a href="{{ route('register') }}">Register</a>
                                 @else
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            @if((Auth::user()->full_name()))
-                                                {{ Auth::user()->email }}
-                                            @else
-                                                {{ Auth::user()->full_name() }}
-                                            @endif
-                                            <span class="caret"></span>
-                                        </a>
+                                    <li class="dropdown" id="profileDropDown">
+                                        <div class="" id="userdp">
+                                            <img src="{{ asset('images/default-avatar-female.png') }}" alt="">
+                                        </div>
+
+                                        <div class="">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                                @if((Auth::user()->full_name()))
+                                                    {{ Auth::user()->email }}
+                                                @else
+                                                    {{ Auth::user()->full_name() }}
+                                                @endif
+                                                {{--<span class="caret"></span>--}}
+                                            </a>
+                                        </div>
+
 
                                         <ul class="dropdown-menu" role="menu">
-                                            <li>
+                                            <li style="width: 200px;height: 300px">
                                                 <a href="{{ route('check-user-details') }}">
                                                     Profile
                                                 </a>
@@ -279,11 +287,10 @@
     {{--<script type="text/javascript" src="./jquery.js"></script>--}}
     {{--<script type="text/javascript" src="./bootstrap.min.js"></script>--}}
     {{--<script type="text/javascript" src="./bootstrap-dropdownhover.min.js"></script>--}}
-    {{--<script type="text/javascript" src="./jquery-ui.js"></script>--}}
-    <script type="text/javascript" src="{{'js/jquery-scrolltofixed-min.js'}}"></script>
-    {{--<script type="text/javascript" src="./isotope.js"></script>--}}
+    <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
     {{--<script type="text/javascript" src="./stellar.js"></script>--}}
-    {{--<script type="text/javascript" src="./owl.carousel.min.js"></script>--}}
+    {{--<script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>--}}
     {{--<script type="text/javascript" src="./jquery.magnific-popup.min.js"></script>--}}
     {{--<script type="text/javascript" src="./jquery.masonry.min.js"></script>--}}
     {{--<script type="text/javascript" src="./css3-animate-it.js"></script>--}}
@@ -302,13 +309,13 @@
         });
     </script>
     <!-- Show current date on the website -->
-    <script>
-        var n = new Date();
-            y = n.getFullYear();
-            m = n.getMonth();
-            d = n.getDate();
-            document.getElementById('date').innerHTML = m + "/" + d + "/" + y;
-    </script>
+    {{--<script>--}}
+        {{--var n = new Date();--}}
+            {{--y = n.getFullYear();--}}
+            {{--m = n.getMonth();--}}
+            {{--d = n.getDate();--}}
+            {{--document.getElementById('date').innerHTML = m + "/" + d + "/" + y;--}}
+    {{--</script>--}}
 
     <!-- Funfact START -->
     <script type="text/javascript">

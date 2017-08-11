@@ -46,7 +46,6 @@
             <div class="col-md-3">
                 <div class="irs-footer-contact">
                     <h4 class="irs-footer-heading">Contact Us</h4>
-                    <img src="./footer.jpg" alt="">
                     <div class="irs-mailbox">
                         <p><i class="zmdi zmdi-email"></i> Mail: support@goodschools.com.ng </p>
                         <p><i class="zmdi zmdi-gps-dot"></i> Imo State Nigeria</p>

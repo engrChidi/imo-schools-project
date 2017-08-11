@@ -57,6 +57,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'usertype' => 'required',
             'phone_number' => 'required',
+            'gender'    =>  'required',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|max:20|confirmed',
             'password_confirmation' => 'required|same:password',
@@ -64,6 +65,7 @@ class RegisterController extends Controller
          [
               'usertype.required'         =>      'Please tell us who you are',
               'phone_number.required'     =>      'The phone number is required',
+              'gender.required'           =>      'The gender field is required',
               'email.required'            =>      'Email address is required',
               'email.email'               =>      'Email is invalid',
               'password.required'         =>      'Password is required',
@@ -84,6 +86,7 @@ class RegisterController extends Controller
         $user =  User::create([
             'usertype' => $data['usertype'],
             'phone_number' => $data['phone_number'],
+            'gender'        =>  $data['gender'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'token'    =>  str_random(64),
@@ -106,7 +109,7 @@ class RegisterController extends Controller
         // Session::put('OTP', $otp);
 
         // Send Email to the registered user
-        // $this->initiateEmailActivation($user);
+         $this->initiateEmailActivation($user);
         return $user;
     }
 

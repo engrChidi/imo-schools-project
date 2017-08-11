@@ -9,6 +9,17 @@
   padding-top: 200px;
 }
 
+#profileDropDown {
+  list-style: none;
+}
+
+#userdp {
+  height: 35px;
+  width: 35px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
 #schoolSearchWrapper {
   height: 400px;
   border: 1px solid #f5f5f5;
