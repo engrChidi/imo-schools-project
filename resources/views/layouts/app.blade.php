@@ -189,23 +189,22 @@
 
                                             <ul id="dpDropDown" class="dropdown-menu" role="menu" aria-labelledby="profileLink">
                                                 <li>
-
-                                                    <div class="" id="userdpDetails">
-                                                        @if(Auth::user()->gender == 'male')
+                                                    <div class="text-center" id="userdpDetails">
+                                                        @if(Auth::user()->gender == "male")
                                                             <img src="{{ asset('images/default-avatar-male.png') }}" alt="">
                                                         @else
                                                             <img src="{{ asset('images/default-avatar-female.png') }}" alt="">
                                                         @endif
                                                     </div>
 
-                                                    <div class="">
-                                                        <a class="btn btn-default" href="{{ route('check-user-details') }}">
+                                                    <div class="pull-left">
+                                                        <a id="viewProfile" class="btn btn-default" href="{{ route('check-user-details') }}">
                                                             View Profile
                                                         </a>
                                                     </div>
 
-                                                    <div>
-                                                        <a class="btn btn-danger" href="{{ route('logout') }}"
+                                                    <div class="pull-right">
+                                                        <a id="logoutLink" class="btn btn-danger" href="{{ route('logout') }}"
                                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                             Logout
