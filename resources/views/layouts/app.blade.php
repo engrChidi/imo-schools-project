@@ -106,7 +106,7 @@
             <div class="irs-header-nav scrollingto-fixed scroll-to-fixed-fixed">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-10 col-sm-12">
+                        <div class="col-md-9 col-sm-12">
                             <nav class="navbar navbar-default irs-navbar">
                                 <div class="container-fluid">
                                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -151,52 +151,76 @@
                                 <!-- /.container-fluid -->
                             </nav>
                         </div>
-                        <div class="col-md-2 col-sm-12">
-                            <div class="irs-log-reg">
+                        <div class="col-md-3 col-sm-12">
 
                                 @if (Auth::guest())
+
+                                <div class="irs-log-reg">
                                     {{--<a href="#">Login</a>--}}
                                     <a href="{{ route('login') }}">Login</a>
                                     <span>/</span>
                                     {{--<a href="#">Register</a>--}}
                                     <a href="{{ route('register') }}">Register</a>
+                                </div>
+
                                 @else
-                                    <li class="dropdown" id="profileDropDown">
-                                        <div class="" id="userdp">
-                                            <img src="{{ asset('images/default-avatar-female.png') }}" alt="">
-                                        </div>
 
-                                        <div class="">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                                @if((Auth::user()->full_name()))
-                                                    {{ Auth::user()->email }}
-                                                @else
-                                                    {{ Auth::user()->full_name() }}
+                                    <ul class="irs-log-profile">
+
+                                        <li class="dropdown" id="profileDropDown">
+                                            <a href="{{ url('/') }}" id="profileLink" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                            <div class="pull-left" id="userdp">
+                                                @if(Auth::user()->gender == 'male')
+                                                    <img src="{{ asset('images/default-avatar-male.png') }}" alt="">
+                                                    @else
+                                                    <img src="{{ asset('images/default-avatar-female.png') }}" alt="">
                                                 @endif
-                                                {{--<span class="caret"></span>--}}
+                                            </div>
+
+                                            <div class="pull-left" id="userLoginName">
+                                                    @if((Auth::user()->full_name()))
+                                                        {{ Auth::user()->email }}
+                                                    @else
+                                                        {{ Auth::user()->full_name() }}
+                                                    @endif
+                                                    <span class="caret"></span>
+                                            </div>
                                             </a>
-                                        </div>
 
+                                            <ul id="dpDropDown" class="dropdown-menu" role="menu" aria-labelledby="profileLink">
+                                                <li>
 
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li style="width: 200px;height: 300px">
-                                                <a href="{{ route('check-user-details') }}">
-                                                    Profile
-                                                </a>
-                                                <a href="{{ route('logout') }}"
-                                                   onclick="event.preventDefault();
+                                                    <div class="" id="userdpDetails">
+                                                        @if(Auth::user()->gender == 'male')
+                                                            <img src="{{ asset('images/default-avatar-male.png') }}" alt="">
+                                                        @else
+                                                            <img src="{{ asset('images/default-avatar-female.png') }}" alt="">
+                                                        @endif
+                                                    </div>
+
+                                                    <div class="">
+                                                        <a class="btn btn-default" href="{{ route('check-user-details') }}">
+                                                            View Profile
+                                                        </a>
+                                                    </div>
+
+                                                    <div>
+                                                        <a class="btn btn-danger" href="{{ route('logout') }}"
+                                                           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                    Logout
-                                                </a>
+                                                            Logout
+                                                        </a>
+                                                    </div>
 
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        {{ csrf_field() }}
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
                                 @endif
-                            </div>
                         </div>
                     </div>
                 </div>

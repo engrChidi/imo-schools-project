@@ -14,12 +14,32 @@
 }
 
 #userdp {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
+  padding: 2px;
   background: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #F4A460;
+}
+
+#dpDropDown {
+  width: 227px;
+  height: 200px;
+  position: absolute;
+  top: 54px;
+  border-radius: 0;
+}
+
+#userdpDetails {
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 2px;
   border-radius: 50%;
 }
 
+#userLoginName {
+  margin-left: 20px;
+}
 
 #schoolSearchWrapper {
   height: 400px;

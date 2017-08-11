@@ -444,6 +444,11 @@ h6 {
     color: #ffffff;
 }
 
+.irs-log-profile {
+    padding: 5px 15px;
+    margin-top: 30px;
+}
+
 /***Header two***/
 .ire-header-two {
     position: fixed;
