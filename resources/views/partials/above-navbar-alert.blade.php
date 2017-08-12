@@ -5,12 +5,16 @@
         <button type="button" class="close" data-dismiss="alert" style="color:#fff;">×</button>
         {!! session()->get('above-navbar-message') !!}
         We have sent you an activation link. Kindly check your inbox and activate your account<br>
-        {{--Please activate your email. --}}
-        Didn't get the mail<a href="{{route('authenticated.activation-resend')}}">Resend</a> activation email.')
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
+        Please activate your email.
+        Didn't get the mail &nbsp;&nbsp;<a href="{{route('authenticated.activation-resend')}}">Resend</a> &nbsp;&nbsp;activation email.')
+        @if (\Session::has('message'))
+        <div class="col-md-4 col-md-offset-4">
+            <div class="alert alert-dismissable alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ \Session::get('message') }}
             </div>
+        </div>
+        <div class="clearfix"></div>
         @endif
     </div>
 @endif

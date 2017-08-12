@@ -71,6 +71,8 @@
 
         <!-- Main Header Start -->
         <header class="irs-main-header smaller">
+            @include('partials.above-navbar-alert')
+
             <div class="irs-header-top-bar">
                 <div class="container">
                     <div class="row">

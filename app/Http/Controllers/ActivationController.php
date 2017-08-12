@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Activation;
 use App\Traits\ActivationTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ActivationController extends Controller
 {
@@ -35,6 +36,8 @@ class ActivationController extends Controller
 
         $activation->delete();
 
+        Session::forget('above-navbar-message');
+        Session::forget('message');
         session()->forget('above-navbar-message');
 
         return redirect('home')
@@ -47,8 +50,7 @@ class ActivationController extends Controller
     {
         $this->initiateEmailActivation(auth()->user());
 
-        return redirect('check-users-details')
-            ->with('status', 'success')
-            ->with('message', 'Activation email sent.');
+        Session::put('message', 'Activation Email sent!!');
+        return redirect('check-users-details');
     }
 }

@@ -103,7 +103,6 @@ class RegisterController extends Controller
         $user->assignRole($role);
 
         //Send sms to the user for phone number activation
-        //Todo unComment this out later
         // $this->initiateSmsActivation($data['phone_number'],$otp);
         //set session variable
         // Session::put('OTP', $otp);
