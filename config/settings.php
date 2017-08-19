@@ -10,7 +10,7 @@
         /*
          * Is email activation required
          */
-        'activation' => env('ACTIVATION', false),
+        'activation' => env('ACTIVATION', true),
 
         /**
          * Credentials for sending SMS to users

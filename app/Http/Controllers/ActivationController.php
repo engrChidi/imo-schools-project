@@ -40,7 +40,7 @@ class ActivationController extends Controller
         Session::forget('message');
         session()->forget('above-navbar-message');
 
-        return redirect('home')
+        return redirect('check-users-details')
             ->with('status', 'success')
             ->with('message', 'You successfully activated your email!');
 
