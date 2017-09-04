@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\State;
 
-class DatabaseSeeder extends Seeder
+class StateSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(RoleSeeder::class);
-//         $this->call(StateSeeder::class);
+        $state = new State([
+            'state' => 'Lagos'
+        ]);
     }
 }

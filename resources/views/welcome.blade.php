@@ -154,7 +154,17 @@
                 <div id="schoolSearchWrapper" class="col-md-5">
                     <form id="schoolSearchForm" action="#">
                         <div class="form-group">
-                            <select id="local_government" class="form-control" name="local_government">
+                            <select id="state" class="form-control" name="state">
+                                <option value disabled selected> Select State</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="local_government" class="form-control" name="localGovernment">
                                 <option value disabled selected> Select LGA</option>
                                 <option value="volvo">Volvo</option>
                                 <option value="saab">Saab</option>
