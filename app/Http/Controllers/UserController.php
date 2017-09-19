@@ -16,19 +16,23 @@ class UserController extends Controller
     use SmsActivationTrait;
     public function checkUser()
     {
-        if( auth()->user()->hasRole('teacher')){
-           return redirect()->route('teacher');
+
+        if( strtolower(auth()->user()->usertype) == 'teacher'){
+            return redirect()->route('teacher');
         }
 
-        if( auth()->user()->hasRole('student')){
+
+        if( strtolower(auth()->user()->usertype) == 'student'){
             return redirect()->route('student');
         }
 
-        if( auth()->user()->hasRole('school')){
+
+        if( strtolower(auth()->user()->usertype) == 'school'){
             return redirect()->route('school');
         }
 
-        if( auth()->user()->hasRole('business')){
+
+        if( strtolower(auth()->user()->usertype) == 'business'){
             return redirect()->route('business');
         }
 

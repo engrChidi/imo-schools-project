@@ -172,7 +172,7 @@
                                         <li class="dropdown" id="profileDropDown">
                                             <a href="{{ url('/') }}" id="profileLink" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                                             <div class="pull-left" id="userdp">
-                                                @if(Auth::user()->gender == 'male')
+                                                @if(strtolower(Auth::user()->gender) == 'male')
                                                     <img src="{{ asset('images/default-avatar-male.png') }}" alt="">
                                                     @else
                                                     <img src="{{ asset('images/default-avatar-female.png') }}" alt="">
@@ -192,7 +192,7 @@
                                             <ul id="dpDropDown" class="dropdown-menu" role="menu" aria-labelledby="profileLink">
                                                 <li>
                                                     <div class="text-center" id="userdpDetails">
-                                                        @if(Auth::user()->gender == "male")
+                                                        @if(strtolower(Auth::user()->gender) == "male")
                                                             <img src="{{ asset('images/default-avatar-male.png') }}" alt="">
                                                         @else
                                                             <img src="{{ asset('images/default-avatar-female.png') }}" alt="">

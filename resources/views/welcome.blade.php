@@ -156,11 +156,11 @@
                         <div class="form-group">
                             <select id="state" class="form-control" name="state">
                                 <option value disabled selected> Select State</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                                @foreach(getAllState() as $state)
+                                <option value="{{ $state->name }}">{{ $state->name }}</option>
+                                @endforeach
                             </select>
+
                         </div>
 
                         <div class="form-group">

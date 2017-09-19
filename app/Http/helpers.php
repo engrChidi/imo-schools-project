@@ -30,3 +30,10 @@
 
         return $mask_number;
     }
+
+    function getAllState()
+    {
+        $states = \Illuminate\Support\Facades\DB::table('states')->get();
+
+        return $states;
+    }

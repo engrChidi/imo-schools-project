@@ -11,8 +11,11 @@
 |
 */
 
+use Faker\Factory as Faker;
+
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function ($faker) {
+    $faker = Faker::create('en_NG"');
     static $password;
 
     return [
