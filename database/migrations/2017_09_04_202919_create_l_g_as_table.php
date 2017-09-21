@@ -13,7 +13,7 @@ class CreateLGAsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lgas', function (Blueprint $table) {
+        Schema::create('l_g_a_s', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('stateId');
@@ -28,6 +28,6 @@ class CreateLGAsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lgas');
+        Schema::dropIfExists('l_g_a_s');
     }
 }

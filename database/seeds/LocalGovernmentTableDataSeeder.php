@@ -1826,124 +1826,124 @@ class LocalGovernmentTableDataSeeder extends Seeder
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ibarapa East',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ido',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Afijo',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Akinyele',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Atiba',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Egbeda',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ibadan North',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ibadan North-East',
             'stateId'   =>  30
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  30
-        ]);
-        $lga->save();
-
-
-        $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ibadan North-West',
             'stateId'   =>  30
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ibarapa Central',
+            'stateId'   =>  30
+        ]);
+        $lga->save();
+
+
+        $lga = new LGA([
+            'name'  =>  'Bokkos',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Barkin Ladi',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bassa',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Jos East',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Kanam',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Kanke',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Mangu',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Mikang',
             'stateId'   =>  31
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Pankshin',
             'stateId'   =>  31
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Riyom',
             'stateId'   =>  31
         ]);
         $lga->save();
@@ -1951,124 +1951,124 @@ class LocalGovernmentTableDataSeeder extends Seeder
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Abua/Odual',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ahoada East',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ahoada West',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Akuku-Toru',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Andoni',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Asari-Toru',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bonny',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Degema',
             'stateId'   =>  32
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  32
-        ]);
-        $lga->save();
-
-
-        $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Eleme',
             'stateId'   =>  32
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Emuoha',
+            'stateId'   =>  32
+        ]);
+        $lga->save();
+
+
+        $lga = new LGA([
+            'name'  =>  'Binji',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bodinga',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Dange Shuni',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gada',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Goronyo',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gudu',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gwadabawa',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Illela',
             'stateId'   =>  33
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Isa',
             'stateId'   =>  33
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Kebbe',
             'stateId'   =>  33
         ]);
         $lga->save();
@@ -2076,62 +2076,62 @@ class LocalGovernmentTableDataSeeder extends Seeder
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ardo Kola',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bali',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Donga',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gashaka',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gassol',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Ibi',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Jalingo',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Karim Lamido',
             'stateId'   =>  34
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Kumi',
             'stateId'   =>  34
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Lau',
             'stateId'   =>  34
         ]);
         $lga->save();
@@ -2139,191 +2139,164 @@ class LocalGovernmentTableDataSeeder extends Seeder
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bade',
             'stateId'   =>  35
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bursari',
             'stateId'   =>  35
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Damaturu',
             'stateId'   =>  35
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Fika',
             'stateId'   =>  35
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Fune',
             'stateId'   =>  35
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  35
-        ]);
-        $lga->save();
-
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  35
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  35
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Geidam',
             'stateId'   =>  35
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gujba',
+            'stateId'   =>  35
+        ]);
+        $lga->save();
+
+        $lga = new LGA([
+            'name'  =>  'Gulani',
+            'stateId'   =>  35
+        ]);
+        $lga->save();
+
+        $lga = new LGA([
+            'name'  =>  'Jakuso',
             'stateId'   =>  35
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Karasuwa',
+            'stateId'   =>  35
+        ]);
+        $lga->save();
+
+
+        $lga = new LGA([
+            'name'  =>  'Anka',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bakura',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Birnin Magaji/Kiyaw',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bukkuyum',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Bungudu',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gummi',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Gusau',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Kaura Namoda',
             'stateId'   =>  36
         ]);
         $lga->save();
 
         $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  36
-        ]);
-        $lga->save();
-
-
-        $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Maradun',
             'stateId'   =>  36
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
-        ]);
-        $lga->save();
-
-        $lga = new LGA([
-            'name'  =>  '',
-            'stateId'   =>  37
+            'name'  =>  'Maru',
+            'stateId'   =>  36
         ]);
         $lga->save();
 
 
         $lga = new LGA([
-            'name'  =>  '',
+            'name'  =>  'Abaji',
             'stateId'   =>  37
         ]);
         $lga->save();
 
+        $lga = new LGA([
+            'name'  =>  'Bwari',
+            'stateId'   =>  37
+        ]);
+        $lga->save();
 
+        $lga = new LGA([
+            'name'  =>  'Gwagwalada',
+            'stateId'   =>  37
+        ]);
+        $lga->save();
+
+        $lga = new LGA([
+            'name'  =>  'Kuje',
+            'stateId'   =>  37
+        ]);
+        $lga->save();
+
+        $lga = new LGA([
+            'name'  =>  'Kwali',
+            'stateId'   =>  37
+        ]);
+        $lga->save();
+
+        $lga = new LGA([
+            'name'  =>  'Municipal Area',
+            'stateId'   =>  37
+        ]);
+        $lga->save();
     }
 }
