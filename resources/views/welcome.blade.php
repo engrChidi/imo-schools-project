@@ -154,62 +154,65 @@
                 <div id="schoolSearchWrapper" class="col-md-5">
                     <form id="schoolSearchForm" action="#">
                         <div class="form-group">
-                            <select id="state" class="form-control" name="state">
+                            <select id="state" class="form-control select2" name="state">
                                 <option value disabled selected> Select State</option>
                                 @foreach(getAllState() as $state)
-                                <option value="{{ $state->name }}">{{ $state->name }}</option>
+                                <option value="{{ $state->id }}">{{ $state->name }}</option>
                                 @endforeach
                             </select>
 
                         </div>
 
                         <div class="form-group">
-                            <select id="local_government" class="form-control" name="localGovernment">
-                                <option value disabled selected> Select LGA</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                            <select id="local_government" class="form-control select2" name="localGovernment">
+                                <option value disabled selected> Select a Local government area</option>
+                                @foreach(getAllLga() as $lga)
+                                <option value="{{ $lga->name  }}">{{ $lga->name  }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <select id="school_type" class="form-control" name="schoolType">
-                                <option value disabled selected>Choose A School Type</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                            <select id="school_type" class="form-control select2" name="schoolType">
+                                <option value disabled selected>Please select a school type</option>
+                                <option value="creche">Creche</option>
+                                <option value="nursery">Nursery</option>
+                                <option value="primary">Primary</option>
+                                <option value="secondary">Secondary</option>
+                                <option value="coaching centers">Coaching Centers (WAEC/JAMB)</option>
+                                <option value="trainings">Skills Acquisitions Center </option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <select id="verified_schools" class="form-control" name="verifySchools">
-                                <option value disabled selected>Verified or Unverified</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <select id="facilities_school" class="form-control" name="facilities">
+                            <select id="verified_schools" class="form-control select2" name="verifySchools">
                                 <option value disabled selected>Select an option</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                                <option value="verified">Verified</option>
+                                <option value="all">All</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <select id="skill_type" class="form-control" name="skillType">
+                            <select id="facilities_school" class="form-control select2" name="facilities">
+                                <option value disabled selected>Select an option</option>
+                                <option value="boarding">Boarding</option>
+                                <option value="school bus">School Bus</option>
+                                <option value="cheap">Below 50,000</option>
+                                <option value="classy">Above 50,000</option>
+                                <option value="clubs, societies,Arts">Clubs, Societies,Arts</option>
+                                <option value="girls only">Girls Only</option>
+                                <option value="Boys only">Boys Only</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="skill_type" class="form-control select2" name="skillType">
                                 <option value disabled selected>Select an Skill Type</option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                                <option value="computer training">Computer Training</option>
+                                <option value="fashion designing">Fashion Designing</option>
+                                <option value="makeup">Make Up/ Hair / Cosmetics</option>
+                                <option value="event planning">Event Planning, Decorations and Catering</option>
+                                <option value="oil and gas training">Oil and Gas Training</option>
                             </select>
                         </div>
 
@@ -645,3 +648,12 @@
 
     @include('partials.footer')
 @endsection
+
+@section('script')
+
+    <script>
+        $('#state').change(function(){
+           console.log($(this).val());
+        });
+    </script>
+@stop

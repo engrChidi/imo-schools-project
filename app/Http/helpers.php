@@ -37,3 +37,10 @@
 
         return $states;
     }
+
+    function getAllLga()
+    {
+        $lgas = \Illuminate\Support\Facades\DB::table('l_g_a_s')->get();
+
+        return $lgas;
+    }

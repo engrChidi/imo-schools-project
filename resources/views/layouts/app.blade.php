@@ -18,6 +18,7 @@
     <link href="{{ asset('css/pages.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-2.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
     @yield('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">--}}
@@ -316,6 +317,7 @@
     <script type="text/javascript" src="{{asset('js/jquery-scrolltofixed-min.js')}}"></script>
     {{--<script type="text/javascript" src="./stellar.js"></script>--}}
     <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/select2.full.min.js')}}"></script>
     {{--<script type="text/javascript" src="./jquery.magnific-popup.min.js"></script>--}}
     {{--<script type="text/javascript" src="./jquery.masonry.min.js"></script>--}}
     {{--<script type="text/javascript" src="./css3-animate-it.js"></script>--}}
@@ -325,6 +327,13 @@
 
     <!-- Custom script for all pages -->
     <script type="text/javascript" src="{{'js/script.js'}}"></script>
+
+<script>
+    $('.select2').select2({
+//        width: 'resolve',
+//        theme: 'classic'
+    });
+</script>
 
 
     <script>
@@ -411,5 +420,7 @@
         }).show();
         @endif
     </script>
+
+@yield('script')
 </body>
 </html>
