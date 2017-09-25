@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,13 @@ class HomeController extends Controller
         return view('welcome');
     }
 
+
+    public function getLocalGovernments(Request $request)
+    {
+        $lga = DB::table('l_g_a_s')->where('stateId', $request->state_id)->get();
+
+        response()->json($lga);
+    }
     /**
      * Show the application dashboard.
      *

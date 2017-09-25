@@ -157,6 +157,7 @@
                             <select id="state" class="form-control select2" name="state">
                                 <option value disabled selected> Select State</option>
                                 @foreach(getAllState() as $state)
+                                    {{--<input type="hidden" id="stateIdInput" value="{{ $state->id  }}">--}}
                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
                                 @endforeach
                             </select>
@@ -164,11 +165,17 @@
                         </div>
 
                         <div class="form-group">
+                            <div id="getLgaSpinner" class="text-muted small text-center hidden">
+                                <img src="{{ asset('images/loading_icon.gif') }}" alt="" style="width: 32px"/> <span>Getting Local governments.... </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <select id="local_government" class="form-control select2" name="localGovernment">
                                 <option value disabled selected> Select a Local government area</option>
-                                @foreach(getAllLga() as $lga)
-                                <option value="{{ $lga->name  }}">{{ $lga->name  }}</option>
-                                @endforeach
+                                {{--@foreach(getAllLga() as $lga)--}}
+                                {{--<option value="{{ $lga->name  }}">{{ $lga->name  }}</option>--}}
+                                {{--@endforeach--}}
                             </select>
                         </div>
 
@@ -652,8 +659,38 @@
 @section('script')
 
     <script>
-        $('#state').change(function(){
-           console.log($(this).val());
-        });
+        $(function() {
+            $('#state').change(function(){
+                $.ajax({
+                    url: '{{ url('/lga/{id}') }}',
+                    method: 'get',
+                    data: {"stateId": $(this).val()},
+
+                    beforeSend: function(){
+                        $('#getLgaSpinner').removeClass('hidden');
+//                        $('#payeSelect').val('').html('');
+                    },
+
+                    success: function(data){
+//                        $.each(data.agencies, function(key, value) {
+//
+////                            alert( key + ' is ' + value);
+//                            $('#payeSelect').append($("<option></option>").val(key).html(value));
+//                            $('#revenueCode').html('Revenue Code : ' + data.revenueCode);
+//                            $('#codeWrapper').removeClass('hidden');
+//                            $('#getAgenciesSpinner').addClass('hidden');
+//                        });
+                        console.log(data)
+                    },
+
+                    fail: function(err){
+//                        $('#getAgenciesSpinner').addClass('hidden');
+//                        $('#codeWrapper').addClass('hidden');
+                        console.log(err);
+                    }
+                })
+            })
+        })
+
     </script>
 @stop

@@ -205,3 +205,9 @@
         'uses'   =>  'UserController@editBusinessProfile',
         'as'    =>  'editBusiness'
     ]);
+
+    // Route to fetch local governments
+    Route::get('/lga/{id}', [
+       'uses'   =>   'HomeController@getLocalGovernments',
+        'as'    =>  'fetchLgas'
+    ]);

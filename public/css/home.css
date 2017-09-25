@@ -174,3 +174,9 @@
     transform: scale3D(0, 0, 1);
   }
 }
+
+
+
+#getLgaSpinner {
+  margin: 10px 0;
+}
