@@ -20,4 +20,12 @@ class SchoolsController extends Controller
     {
         return view('pages.add-school');
     }
+
+    public function searchForSchools(Request $request)
+    {
+        $schools = $request->all();
+
+        dd($schools);
+
+    }
 }

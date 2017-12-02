@@ -25,11 +25,11 @@ class HomeController extends Controller
     }
 
 
-    public function getLocalGovernments(Request $request)
+    public function getLocalGovernments($id)
     {
-        $lga = DB::table('l_g_a_s')->where('stateId', $request->state_id)->get();
+        $lgas = DB::table('l_g_a_s')->where('stateId', $id)->pluck("name", "id");
 
-        response()->json($lga);
+        return json_encode($lgas);
     }
     /**
      * Show the application dashboard.

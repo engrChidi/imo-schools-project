@@ -152,10 +152,11 @@
                 </div>
 
                 <div id="schoolSearchWrapper" class="col-md-5">
-                    <form id="schoolSearchForm" action="#">
+                    <form id="schoolSearchForm" action="{{ url('/search/schools')  }}" method="post">
+                        {{ csrf_field()  }}
                         <div class="form-group">
-                            <select id="state" class="form-control select2" name="state">
-                                <option value disabled selected> Select State</option>
+                            <select id="state" class="form-control select2" name="_state">
+                                <option value disabled selected>Select a state</option>
                                 @foreach(getAllState() as $state)
                                     {{--<input type="hidden" id="stateIdInput" value="{{ $state->id  }}">--}}
                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -164,6 +165,8 @@
 
                         </div>
 
+                        <input type="hidden" id="baseUrl" value="{{ url('/')  }}">
+
                         <div class="form-group">
                             <div id="getLgaSpinner" class="text-muted small text-center hidden">
                                 <img src="{{ asset('images/loading_icon.gif') }}" alt="" style="width: 32px"/> <span>Getting Local governments.... </span>
@@ -171,7 +174,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select id="local_government" class="form-control select2" name="localGovernment">
+                            <select id="local_government" class="form-control select2" name="_lga">
                                 <option value disabled selected> Select a Local government area</option>
                                 {{--@foreach(getAllLga() as $lga)--}}
                                 {{--<option value="{{ $lga->name  }}">{{ $lga->name  }}</option>--}}
@@ -180,7 +183,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select id="school_type" class="form-control select2" name="schoolType">
+                            <select id="school_type" class="form-control select2" name="_schoolType">
                                 <option value disabled selected>Please select a school type</option>
                                 <option value="creche">Creche</option>
                                 <option value="nursery">Nursery</option>
@@ -192,7 +195,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select id="verified_schools" class="form-control select2" name="verifySchools">
+                            <select id="verified_schools" class="form-control select2" name="_verifiedOption">
                                 <option value disabled selected>Select an option</option>
                                 <option value="verified">Verified</option>
                                 <option value="all">All</option>
@@ -200,7 +203,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select id="facilities_school" class="form-control select2" name="facilities">
+                            <select id="facilities_school" class="form-control select2" name="_facility">
                                 <option value disabled selected>Select an option</option>
                                 <option value="boarding">Boarding</option>
                                 <option value="school bus">School Bus</option>
@@ -213,7 +216,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select id="skill_type" class="form-control select2" name="skillType">
+                            <select id="skill_type" class="form-control select2" name="_skills">
                                 <option value disabled selected>Select an Skill Type</option>
                                 <option value="computer training">Computer Training</option>
                                 <option value="fashion designing">Fashion Designing</option>
@@ -660,35 +663,46 @@
 
     <script>
         $(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
             $('#state').change(function(){
-                $.ajax({
-                    url: '{{ url('/lga/{id}') }}',
-                    method: 'get',
-                    data: {"stateId": $(this).val()},
+                let stateID = $(this).val();
+                let baseUrl = $('#baseUrl').val();
 
-                    beforeSend: function(){
-                        $('#getLgaSpinner').removeClass('hidden');
+                if(stateID) {
+                    $.ajax({
+                        url: baseUrl+'/lga/'+stateID,
+//                        url: '/lga/'+stateID,
+//                        url: 'https://www.goodschool.com.ng/lga/'+stateID,
+                        type: 'get',
+                        dataType: "json",
+
+                        beforeSend: function(){
+                            $('#getLgaSpinner').removeClass('hidden');
 //                        $('#payeSelect').val('').html('');
-                    },
+                        },
 
-                    success: function(data){
-//                        $.each(data.agencies, function(key, value) {
-//
-////                            alert( key + ' is ' + value);
-//                            $('#payeSelect').append($("<option></option>").val(key).html(value));
-//                            $('#revenueCode').html('Revenue Code : ' + data.revenueCode);
-//                            $('#codeWrapper').removeClass('hidden');
-//                            $('#getAgenciesSpinner').addClass('hidden');
-//                        });
-                        console.log(data)
-                    },
+                        success: function(data){
+                            $('select[name="localGovernment"]').empty();
+                            $.each(data, function(key, value) {
+                               $('select[name="localGovernment"]').append('<option value="'+ key + '">' + value +'</option>');
+                                $('#getLgaSpinner').addClass('hidden');
+                            });
+                        },
 
-                    fail: function(err){
-//                        $('#getAgenciesSpinner').addClass('hidden');
-//                        $('#codeWrapper').addClass('hidden');
-                        console.log(err);
-                    }
-                })
+                        fail: function(err){
+                            $('#getLgaSpinner').addClass('hidden');
+                        }
+                    });
+
+                }else  {
+                    $('select[name="localGovernment"]').empty();
+                    console.log("Not found");
+                }
             })
         })
 

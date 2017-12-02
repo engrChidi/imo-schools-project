@@ -328,6 +328,12 @@
     <!-- Custom script for all pages -->
     <script type="text/javascript" src="{{'js/script.js'}}"></script>
 
+    <script>
+        window.Laravel = {!! json_encode([
+               'csrfToken' => csrf_token(),
+           ]) !!};
+    </script>
+
 <script>
     $('.select2').select2({
 //        width: 'resolve',

@@ -20,6 +20,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \Barryvdh\Cors\HandleCors::class,
     ];
 
     /**
@@ -36,6 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Barryvdh\Cors\HandleCors::class,
         ],
 
         'api' => [
@@ -60,6 +62,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'usertype' =>   CheckUserType::class,
         'activated' => CheckIsUserActivated::class,
-        'smsVerified' => \App\Http\Middleware\CheckUserVerified::class
+        'smsVerified' => \App\Http\Middleware\CheckUserVerified::class,
     ];
 }

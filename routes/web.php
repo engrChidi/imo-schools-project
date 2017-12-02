@@ -206,8 +206,15 @@
         'as'    =>  'editBusiness'
     ]);
 
-    // Route to fetch local governments
+//    // Route to fetch local governments
     Route::get('/lga/{id}', [
        'uses'   =>   'HomeController@getLocalGovernments',
         'as'    =>  'fetchLgas'
+    ]);
+
+
+    // Process school search form for all users
+    Route::post('/search/schools', [
+        'uses'  =>  'SchoolsController@searchForSchools',
+        'as'    =>  'searchForSchools'
     ]);
